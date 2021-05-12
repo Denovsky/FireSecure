@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Fire Secure</string>
+    <string name="logo">АРМ ДЛЯ РТП</string>
+    <string name="entry_name">Пожарные<br/>подразделения</string>
+    <string name="data_str">Справочные данные</string>
+    <string name="calc_str">Произвести расчёт</string>
+    <string name="setting_str">Настройки</string>
+    <string name="chose_division">Выберите пожарное<br/>подразделение</string>
+    <string name="hint_search">Название пожарного подразделения</string>
+    <string name="submit">Submit</string>
+    <string name="add_division">Добавьте пожарное подразделение</string>
+</resources>

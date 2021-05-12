@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_line"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_lower_line"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/logo"
+            android:textColor="@color/black"
+            android:textSize="50sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@drawable/bg_lower_line"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/entry_but"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="75dp"
+            android:background="@drawable/bg_button"
+            android:text="@string/entry_name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:backgroundTint="none" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@drawable/bg_lower_line"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/data_but"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/bg_button"
+                android:text="@string/data_str"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTint="none"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/calc_but"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/bg_button"
+                android:text="@string/calc_str"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTint="none"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_lower_line"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/setting_but"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/bg_button"
+            android:text="@string/setting_str"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:backgroundTint="none" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
