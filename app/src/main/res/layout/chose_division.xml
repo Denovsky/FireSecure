@@ -28,7 +28,7 @@
                 android:text="@string/chose_division"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
-                android:textSize="35sp" />
+                android:textSize="60sp" />
 
         </LinearLayout>
 
@@ -71,8 +71,8 @@
                             android:background="@drawable/bg_button"
                             android:gravity="center"
                             android:hint="@string/hint_search"
-                            android:paddingTop="8dp"
-                            android:paddingBottom="8dp"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
                             android:textSize="20sp" />
 
                     </LinearLayout>
@@ -83,10 +83,20 @@
                         android:layout_weight="1"
                         android:gravity="center">
 
-                        <ImageButton
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:background="@drawable/search" />
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/search_fab"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="50dp"
+                            android:backgroundTint="@color/white"
+                            android:contentDescription="@string/submit"
+                            android:src="@drawable/search"
+                            app:fabCustomSize="100dp"
+                            app:maxImageSize="50dp"
+                            app:backgroundTint="@color/black"
+                            app:borderWidth="1dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
 
                     </LinearLayout>
 
@@ -128,14 +138,14 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_fub"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_margin="16dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="50dp"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/submit"
         android:src="@drawable/ic_add_fab"
-        app:fabCustomSize="80dp"
-        app:maxImageSize="40dp"
+        app:fabCustomSize="100dp"
+        app:maxImageSize="50dp"
         app:backgroundTint="@color/black"
         app:borderWidth="1dp"
         app:layout_constraintBottom_toBottomOf="parent"

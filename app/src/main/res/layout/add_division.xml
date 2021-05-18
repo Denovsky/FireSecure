@@ -146,7 +146,7 @@
                                 android:layout_marginRight="12dp"
                                 android:background="@drawable/bg_button"
                                 android:gravity="center"
-                                android:text="СПСЧ №"
+                                android:hint="СПСЧ №..."
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
                                 android:textSize="20sp" />
@@ -169,7 +169,7 @@
                                 android:layout_marginRight="12dp"
                                 android:background="@drawable/bg_button"
                                 android:gravity="center"
-                                android:text="СУФПС №"
+                                android:hint="СУФПС №..."
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
                                 android:textSize="20sp" />
@@ -192,7 +192,7 @@
                                 android:layout_marginRight="12dp"
                                 android:background="@drawable/bg_button"
                                 android:gravity="center"
-                                android:text="Город "
+                                android:hint="Город ..."
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
                                 android:textSize="20sp" />
