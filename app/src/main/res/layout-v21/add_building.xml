@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/add_division"
+                android:text="@string/add_building"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="35sp" />
@@ -70,7 +70,7 @@
                                 android:layout_marginBottom="50dp"
                                 android:background="@drawable/bg_line"
                                 android:gravity="center"
-                                android:text="Название, номер части:"
+                                android:text="Наименование сооружения:"
                                 android:textColor="@color/black"
                                 android:textSize="35sp" />
 
@@ -115,7 +115,7 @@
                                 android:layout_marginRight="25dp"
                                 android:layout_marginBottom="50dp"
                                 android:background="@drawable/bg_line"
-                                android:text="Район выезда:"
+                                android:text="Адрес:"
                                 android:textSize="35sp"
                                 android:gravity="center"
                                 android:textColor="@color/black" />
@@ -146,7 +146,7 @@
                             android:layout_weight="1">
 
                             <EditText
-                                android:id="@+id/SPCH_divis"
+                                android:id="@+id/name_building"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -155,7 +155,7 @@
                                 android:layout_marginRight="12dp"
                                 android:background="@drawable/bg_button"
                                 android:gravity="center"
-                                android:hint="СПСЧ №..."
+                                android:hint="Сооружение № ..."
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
                                 android:textSize="33sp" />
@@ -169,7 +169,7 @@
                             android:layout_weight="1">
 
                             <EditText
-                                android:id="@+id/SYFP_divis"
+                                android:id="@+id/own_of_building"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -178,7 +178,7 @@
                                 android:layout_marginRight="12dp"
                                 android:background="@drawable/bg_button"
                                 android:gravity="center"
-                                android:hint="СУФПС №..."
+                                android:hint="ООО «...»"
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
                                 android:textSize="33sp" />
@@ -192,7 +192,7 @@
                             android:layout_weight="1">
 
                             <EditText
-                                android:id="@+id/town_divis"
+                                android:id="@+id/address_building"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -201,7 +201,7 @@
                                 android:layout_marginRight="12dp"
                                 android:background="@drawable/bg_button"
                                 android:gravity="center"
-                                android:hint="Город ..."
+                                android:hint="Улица ... дом ..."
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
                                 android:textSize="33sp" />

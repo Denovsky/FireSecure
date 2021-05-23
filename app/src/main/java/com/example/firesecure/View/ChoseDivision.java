@@ -1,15 +1,38 @@
 package com.example.firesecure.View;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.firesecure.Adapters.CustomAdapterChoseBuilding;
+import com.example.firesecure.Adapters.CustomAdapterChoseDivision;
+import com.example.firesecure.Model.ChoseDivisionDatabase;
 import com.example.firesecure.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class ChoseDivision extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class ChoseDivision extends AppCompatActivity implements View.OnClickListener{
+
+    private EditText enter_search;
+    private ImageView empty_imageview;
+    private TextView no_data;
+    private FloatingActionButton search_fub, add_fub;
+    private RecyclerView recyclerView;
+    private ChoseDivisionDatabase myDB;
+    private ArrayList<String> id_divis, num_divis, depo_divis, town_divis;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -19,9 +42,75 @@ public class ChoseDivision extends AppCompatActivity {
         // делаем полноэкранное
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.chose_division);
+
+        init();
     }
 
     private void init() {
+        enter_search = (EditText) findViewById(R.id.enter_search);
 
+        empty_imageview = (ImageView) findViewById(R.id.empty_imageview);
+        no_data = (TextView) findViewById(R.id.no_data);
+
+        search_fub = (FloatingActionButton) findViewById(R.id.search_fub);
+        search_fub.setOnClickListener(this);
+
+        add_fub = (FloatingActionButton) findViewById(R.id.add_fub);
+        add_fub.setOnClickListener(this);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        myDB = new ChoseDivisionDatabase(ChoseDivision.this);
+
+        id_divis = new ArrayList<>();
+        num_divis = new ArrayList<>();
+        depo_divis = new ArrayList<>();
+        town_divis = new ArrayList<>();
+
+        storeDataInArrays();
+
+        for (int i = 0; i < num_divis.size(); i++){
+            Log.d("main", num_divis.get(i) + " - DB");
+        }
+
+        CustomAdapterChoseDivision customAdapterChoseDivision = new CustomAdapterChoseDivision(ChoseDivision.this,this,
+                id_divis, num_divis, depo_divis, town_divis);
+        recyclerView.setAdapter(customAdapterChoseDivision);
+        recyclerView.setLayoutManager(new LinearLayoutManager(ChoseDivision.this));
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.add_fub:
+                Intent intent = new Intent(this, AddDivision.class);
+                startActivity(intent);
+                break;
+            case R.id.search_fub:
+                break;
+        }
+    }
+
+    void storeDataInArrays(){
+        Cursor cursor = myDB.readAllData();
+        if(cursor.getCount() == 0) {
+            empty_imageview.setVisibility(View.VISIBLE);
+            no_data.setVisibility(View.VISIBLE);
+        } else {
+            empty_imageview.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
+            Log.d("main", String.valueOf(cursor.getCount()));
+            while (cursor.moveToNext()) {
+                id_divis.add(cursor.getString(0));
+                num_divis.add(cursor.getString(1));
+                depo_divis.add(cursor.getString(2));
+                town_divis.add(cursor.getString(3));
+            }
+        }
     }
 }

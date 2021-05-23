@@ -8,5 +8,12 @@
     <string name="chose_division">Выберите пожарное<br/> подразделение</string>
     <string name="hint_search">Название пожарного подразделения</string>
     <string name="submit">Submit</string>
-    <string name="add_division">Добавьте пожарное подразделение</string>
+    <string name="add_division">Добавление пожарной части</string>
+    <string name="add_building">Добавление сооружения</string>
+    <string name="construction_str">Сооружения</string>
+    <string name="hydrants_str">Гидранты</string>
+    <string name="waterpool_str">Пожарные водоемы</string>
+    <string name="employees_str">Сотрудники</string>
+    <string name="tech_str">Техника</string>
+    <string name="info_departure_str">Сведения о районе выезда</string>
 </resources>

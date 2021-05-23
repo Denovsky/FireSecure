@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_line"
+    android:orientation="vertical"
+    tools:context=".View.OTXInfoBuilding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_lower_line"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="60sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:background="@drawable/bg_lower_line"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Количество людей в здании (возможное) днём:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Количество людей в здании (возможное) ночью:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Этажность:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Общая высота:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Размеры:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Наличие подвала:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Наличие чердака, технического этажа:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Стены:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Перегородки:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Перекрытия:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Кровля:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Лестничные клетки:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_12"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Предел огнестойкости и вид противопожарных преград:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_13"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Пути эвакуации:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_14"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Места отключения электроэнергии, вентиляции и дымоудаления:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_15"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Наличие и количество внутренних пожарных кранов, расход воды:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_16"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Тип соединения и диаметр внутренних пожарных кранов, места их нахождения, количество:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_17"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Требуемый расход воды на нужды пожаротушения, способы подачи воды:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_18"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Помещения с наличием взрывоопасных веществ и материалов:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_19"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bg_lower_line"
+                                android:paddingLeft="30dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="30dp"
+                                android:paddingBottom="20dp"
+                                android:text="Наличие У.А.П.Т., У.А.П.С., краткие характеристики эвакуации:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                            <EditText
+                                android:id="@+id/build_info_20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@drawable/bg_button"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/save_fub"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="50dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/submit"
+        app:srcCompat="@drawable/save_btn"
+        app:fabCustomSize="100dp"
+        app:maxImageSize="50dp"
+        app:backgroundTint="@color/black"
+        app:borderWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
