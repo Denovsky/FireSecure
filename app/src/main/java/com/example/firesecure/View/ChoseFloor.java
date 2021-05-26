@@ -26,7 +26,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class ChoseBuilding extends AppCompatActivity implements View.OnClickListener {
+public class ChoseFloor extends AppCompatActivity implements View.OnClickListener {
 
     private String id_divis;
     private boolean flag = false;
@@ -83,7 +83,7 @@ public class ChoseBuilding extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onResume() {
         super.onResume();
-        myDB = new ChoseBuildingDatabase(ChoseBuilding.this);
+        myDB = new ChoseBuildingDatabase(ChoseFloor.this);
 
         if (!flag) {
             clearAllArray();
@@ -98,10 +98,10 @@ public class ChoseBuilding extends AppCompatActivity implements View.OnClickList
             Log.d("main", name_building.get(i) + " - name");
         }
 
-        CustomAdapterChoseBuilding customAdapterChoseBuilding = new CustomAdapterChoseBuilding(ChoseBuilding.this, this,
+        CustomAdapterChoseBuilding customAdapterChoseBuilding = new CustomAdapterChoseBuilding(ChoseFloor.this, this,
                 id_building_final, name_building_final, depo_building_final, address_building_final, id_divis_array_final);
         recyclerView.setAdapter(customAdapterChoseBuilding);
-        recyclerView.setLayoutManager(new LinearLayoutManager(ChoseBuilding.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(ChoseFloor.this));
     }
 
     @Override

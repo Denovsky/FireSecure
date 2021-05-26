@@ -10,9 +10,11 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.TypedArrayUtils;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,9 +24,10 @@ import com.example.firesecure.Model.ChoseDivisionDatabase;
 import com.example.firesecure.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.File;
 import java.util.ArrayList;
 
-public class ChoseDivision extends AppCompatActivity implements View.OnClickListener{
+public class ChoseDivision extends AppCompatActivity implements View.OnClickListener {
 
     private EditText enter_search;
     private ImageView empty_imageview;
@@ -32,7 +35,13 @@ public class ChoseDivision extends AppCompatActivity implements View.OnClickList
     private FloatingActionButton search_fub, add_fub;
     private RecyclerView recyclerView;
     private ChoseDivisionDatabase myDB;
-    private ArrayList<String> id_divis, num_divis, depo_divis, town_divis;
+
+    private ArrayList<String> id_divis = new ArrayList<>();
+    private ArrayList<String> num_divis = new ArrayList<>();
+    private ArrayList<String> depo_divis = new ArrayList<>();
+    private ArrayList<String> town_divis = new ArrayList<>();
+
+    private boolean flag = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,18 +76,22 @@ public class ChoseDivision extends AppCompatActivity implements View.OnClickList
         super.onResume();
         myDB = new ChoseDivisionDatabase(ChoseDivision.this);
 
-        id_divis = new ArrayList<>();
-        num_divis = new ArrayList<>();
-        depo_divis = new ArrayList<>();
-        town_divis = new ArrayList<>();
+        if (!flag) {
 
-        storeDataInArrays();
+            id_divis.clear();
+            num_divis.clear();
+            depo_divis.clear();
+            town_divis.clear();
 
-        for (int i = 0; i < num_divis.size(); i++){
+            storeDataInArrays();
+        }
+        flag = false;
+
+        for (int i = 0; i < num_divis.size(); i++) {
             Log.d("main", num_divis.get(i) + " - DB");
         }
 
-        CustomAdapterChoseDivision customAdapterChoseDivision = new CustomAdapterChoseDivision(ChoseDivision.this,this,
+        CustomAdapterChoseDivision customAdapterChoseDivision = new CustomAdapterChoseDivision(ChoseDivision.this, this,
                 id_divis, num_divis, depo_divis, town_divis);
         recyclerView.setAdapter(customAdapterChoseDivision);
         recyclerView.setLayoutManager(new LinearLayoutManager(ChoseDivision.this));
@@ -86,19 +99,69 @@ public class ChoseDivision extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.add_fub:
                 Intent intent = new Intent(this, AddDivision.class);
                 startActivity(intent);
                 break;
             case R.id.search_fub:
+                flag = true;
+                String divisSearch = enter_search.getText().toString().trim();
+                searchResult(divisSearch);
                 break;
         }
     }
 
-    void storeDataInArrays(){
+    private void searchResult(String divisSearch) {
+        storeDataInArrays();
+
+        if (num_divis.contains(divisSearch)) {
+
+            ArrayList<String> searchArray = new ArrayList<>();
+            int index = num_divis.indexOf(divisSearch);
+            searchArray.add(id_divis.get(index));
+            searchArray.add(num_divis.get(index));
+            searchArray.add(depo_divis.get(index));
+            searchArray.add(town_divis.get(index));
+
+            id_divis.clear();
+            num_divis.clear();
+            depo_divis.clear();
+            town_divis.clear();
+
+            id_divis.add(searchArray.get(0));
+            num_divis.add(searchArray.get(1));
+            depo_divis.add(searchArray.get(2));
+            town_divis.add(searchArray.get(3));
+
+            searchArray.clear();
+
+            onResume();
+
+        } else if (divisSearch.equals("")) {
+            flag = false;
+
+            onResume();
+
+        } else {
+
+            id_divis.clear();
+            num_divis.clear();
+            depo_divis.clear();
+            town_divis.clear();
+
+            empty_imageview.setVisibility(View.VISIBLE);
+            no_data.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+
+            onResume();
+
+        }
+    }
+
+    void storeDataInArrays() {
         Cursor cursor = myDB.readAllData();
-        if(cursor.getCount() == 0) {
+        if (cursor.getCount() == 0) {
             empty_imageview.setVisibility(View.VISIBLE);
             no_data.setVisibility(View.VISIBLE);
         } else {

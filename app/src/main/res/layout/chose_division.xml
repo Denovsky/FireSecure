@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".View.ChoseDivision">
 
     <LinearLayout
@@ -69,6 +70,8 @@
                             android:layout_marginRight="12dp"
                             android:background="@drawable/bg_button"
                             android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textColorHint="#808080"
                             android:hint="@string/hint_search"
                             android:paddingTop="4dp"
                             android:paddingBottom="4dp"
@@ -123,13 +126,15 @@
                         android:id="@+id/recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:visibility="visible"
                         android:background="@drawable/bg_lower_line"
                         android:dividerHeight="10dp"
+                        android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
 
                     <ImageView
                         android:id="@+id/empty_imageview"
@@ -149,6 +154,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:textColor="#808080"
                         android:text="Пусто"
                         android:textSize="20sp"
                         android:alpha="0.4"

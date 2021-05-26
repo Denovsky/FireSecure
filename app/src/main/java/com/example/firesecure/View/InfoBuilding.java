@@ -72,7 +72,6 @@ public class InfoBuilding extends AppCompatActivity implements View.OnClickListe
         Bundle extras = getIntent().getExtras();
         build_id = extras.getString("id");
         getDataOnId(build_id);
-        Toast.makeText(this, build_id + " - my ID", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -125,7 +124,7 @@ public class InfoBuilding extends AppCompatActivity implements View.OnClickListe
         if (cursor.moveToFirst()) {
             String name = cursor.getString(cursor.getColumnIndexOrThrow(myDB.NAME_BUILDING));
             String address = cursor.getString(cursor.getColumnIndexOrThrow(myDB.ADDRESS_BUILDING));
-            header.setText(name + " " + address);
+            header.setText(name + ", " + address);
         }
     }
 }

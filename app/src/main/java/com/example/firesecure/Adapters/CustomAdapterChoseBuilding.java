@@ -56,7 +56,7 @@ public class CustomAdapterChoseBuilding extends RecyclerView.Adapter<CustomAdapt
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
-        holder.SPCH_divis.setText(name_building.get(position) + " " + address_building.get(position));
+        holder.SPCH_divis.setText(name_building.get(position) + ", " + address_building.get(position));
         //Recyclerview onClickListener
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override

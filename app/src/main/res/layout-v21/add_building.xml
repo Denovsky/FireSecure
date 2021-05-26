@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".View.AddDivision">
 
     <LinearLayout
@@ -155,6 +156,8 @@
                                 android:layout_marginRight="12dp"
                                 android:background="@drawable/bg_button"
                                 android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
                                 android:hint="Сооружение № ..."
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
@@ -178,6 +181,8 @@
                                 android:layout_marginRight="12dp"
                                 android:background="@drawable/bg_button"
                                 android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
                                 android:hint="ООО «...»"
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
@@ -201,6 +206,8 @@
                                 android:layout_marginRight="12dp"
                                 android:background="@drawable/bg_button"
                                 android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
                                 android:hint="Улица ... дом ..."
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
