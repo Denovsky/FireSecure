@@ -47,6 +47,15 @@
         <activity android:name=".View.DocumentSchemaBuilding">
 
         </activity>
+        <activity android:name=".View.DocumentWayBuilding">
+
+        </activity>
+        <activity android:name=".View.ChoseFloor">
+
+        </activity>
+        <activity android:name=".View.AddFloor">
+
+        </activity>
     </application>
 
 </manifest>

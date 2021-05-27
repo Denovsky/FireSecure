@@ -173,6 +173,14 @@ public class ChoseBuildingDatabase extends SQLiteOpenHelper {
             } catch (Exception e) {
                 Log.d("tag", String.valueOf(e));
             }
+        } else if (sec.equals("img1")) {
+            String query = "update " + TABLE_NAME + " set " + WAY + " = ? where " + COLUMN_ID + " like " + id;
+            String[] bindArgs = {array.get(0)};
+            try {
+                db.execSQL(query, bindArgs);
+            } catch (Exception e) {
+                Log.d("tag", String.valueOf(e));
+            }
         } else {
             for (int i = 10; i <= 30; i++) {
                 String column = String.format("pacific_build_info_%s", i);

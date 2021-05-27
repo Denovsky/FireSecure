@@ -17,24 +17,40 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firesecure.R;
-import com.example.firesecure.View.InfoDivision;
+import com.example.firesecure.View.InfoBuilding;
 
 import java.util.ArrayList;
 
-public class CustomAdapterChoseDivision extends RecyclerView.Adapter<CustomAdapterChoseDivision.MyViewHolder> {
+public class CustomAdapterChoseFloor extends RecyclerView.Adapter<CustomAdapterChoseFloor.MyViewHolder> {
 
     private Context context;
     private Activity activity;
-    private ArrayList id_divis, num_divis, depo_divis, town_divis;
+    private ArrayList<String> id_floor,
+            num_floor,
+            status_floor,
+            entry_num,
+            length_lever,
+            area_size_floor,
+            id_building;
 
-    public CustomAdapterChoseDivision(Activity activity, Context context, ArrayList id_divis, ArrayList num_divis,
-                               ArrayList depo_divis, ArrayList town_divis) {
+    public CustomAdapterChoseFloor(Activity activity, Context context,
+                                   ArrayList<String> id_floor,
+                                   ArrayList<String> num_floor,
+                                   ArrayList<String> status_floor,
+                                   ArrayList<String> entry_num,
+                                   ArrayList<String> length_lever,
+                                   ArrayList<String> area_size_floor,
+                                   ArrayList<String> id_building) {
         this.activity = activity;
         this.context = context;
-        this.id_divis = id_divis;
-        this.num_divis = num_divis;
-        this.depo_divis = depo_divis;
-        this.town_divis = town_divis;
+
+        this.id_floor = id_floor;
+        this.num_floor = num_floor;
+        this.status_floor = status_floor;
+        this.entry_num = entry_num;
+        this.length_lever = length_lever;
+        this.area_size_floor = area_size_floor;
+        this.id_building = id_building;
     }
 
     @NonNull
@@ -48,16 +64,19 @@ public class CustomAdapterChoseDivision extends RecyclerView.Adapter<CustomAdapt
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
-        holder.SPCH_divis.setText(String.valueOf(num_divis.get(position)));
+        holder.SPCH_divis.setText("Этаж №" + num_floor.get(position));
         //Recyclerview onClickListener
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, InfoDivision.class);
-                intent.putExtra("id", String.valueOf(id_divis.get(position)));
-                intent.putExtra("num", String.valueOf(num_divis.get(position)));
-                intent.putExtra("depo", String.valueOf(depo_divis.get(position)));
-                intent.putExtra("town", String.valueOf(town_divis.get(position)));
+                Intent intent = new Intent(context, InfoBuilding.class);
+                intent.putExtra("id_floor", String.valueOf(id_floor.get(position)));
+                intent.putExtra("num", String.valueOf(num_floor.get(position)));
+                intent.putExtra("status", String.valueOf(status_floor.get(position)));
+                intent.putExtra("entry", String.valueOf(entry_num.get(position)));
+                intent.putExtra("length_lever", String.valueOf(length_lever.get(position)));
+                intent.putExtra("area_size", String.valueOf(area_size_floor.get(position)));
+                intent.putExtra("id_building", String.valueOf(id_building.get(position)));
                 activity.startActivity(intent);
             }
         });
@@ -65,7 +84,7 @@ public class CustomAdapterChoseDivision extends RecyclerView.Adapter<CustomAdapt
 
     @Override
     public int getItemCount() {
-        return id_divis.size();
+        return id_floor.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

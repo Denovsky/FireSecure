@@ -96,6 +96,16 @@ public class InfoBuilding extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("id", build_id);
                 startActivity(intent);
                 break;
+            case R.id.main_plan:
+                intent = new Intent(this, DocumentWayBuilding.class);
+                intent.putExtra("id", build_id);
+                startActivity(intent);
+                break;
+            case R.id.floor_info:
+                intent = new Intent(this, ChoseFloor.class);
+                intent.putExtra("id", build_id);
+                startActivity(intent);
+                break;
         }
     }
 

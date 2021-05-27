@@ -9,13 +9,9 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -34,11 +30,9 @@ import com.example.firesecure.Model.ChoseBuildingDatabase;
 import com.example.firesecure.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
-public class DocumentSchemaBuilding extends AppCompatActivity implements View.OnClickListener {
+public class DocumentWayBuilding extends AppCompatActivity implements View.OnClickListener {
 
     public final int REQUEST_CODE_PERMISSION_READ_CONTACTS = 1;
     public final int FILE_SELECT_CODE = 0;
@@ -64,14 +58,14 @@ public class DocumentSchemaBuilding extends AppCompatActivity implements View.On
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // делаем полноэкранное
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.document_schema_building);
+        setContentView(R.layout.document_way_building);
 
         init();
 
         Cursor cursor = myDB.getData(build_id);
 
         if (cursor.moveToFirst()) {
-            img = cursor.getString(cursor.getColumnIndexOrThrow(myDB.MAIN_PLAN));
+            img = cursor.getString(cursor.getColumnIndexOrThrow(myDB.WAY));
             if (img != null) {
                 try {
                     UriImgPlan = Uri.parse(img);
@@ -89,8 +83,8 @@ public class DocumentSchemaBuilding extends AppCompatActivity implements View.On
 
     private void init() {
         context = this;
-        activity = DocumentSchemaBuilding.this;
-        myDB = new ChoseBuildingDatabase(DocumentSchemaBuilding.this);
+        activity = DocumentWayBuilding.this;
+        myDB = new ChoseBuildingDatabase(DocumentWayBuilding.this);
 
         header = (TextView) findViewById(R.id.header);
         schema_evacuation = (ImageView) findViewById(R.id.schema_evacuation);
@@ -128,12 +122,12 @@ public class DocumentSchemaBuilding extends AppCompatActivity implements View.On
 
     void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Сохранить cхему на местности?");
-        builder.setMessage("Вы уверены, что хотите сохранить схему местности?");
+        builder.setTitle("Сохранить маршрут следования?");
+        builder.setMessage("Вы уверены, что хотите сохранить план маршрута следования?");
         builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                myDB.addPacificInfo(arrayUri, build_id, "img");
+                myDB.addPacificInfo(arrayUri, build_id, "img1");
                 finish();
             }
         });
@@ -215,7 +209,7 @@ public class DocumentSchemaBuilding extends AppCompatActivity implements View.On
         if (cursor.moveToFirst()) {
             String name = cursor.getString(cursor.getColumnIndexOrThrow(myDB.NAME_BUILDING));
             String address = cursor.getString(cursor.getColumnIndexOrThrow(myDB.ADDRESS_BUILDING));
-            header.setText("Общая схема на местности: " + name + ", " + address);
+            header.setText("Маршрут следования: " + name + ", " + address);
         }
     }
 }

@@ -10,17 +10,15 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.firesecure.Adapters.CustomAdapterChoseBuilding;
-import com.example.firesecure.Adapters.CustomAdapterChoseDivision;
+import com.example.firesecure.Adapters.CustomAdapterChoseFloor;
 import com.example.firesecure.Model.ChoseBuildingDatabase;
-import com.example.firesecure.Model.ChoseDivisionDatabase;
+import com.example.firesecure.Model.ChoseFloorDatabase;
 import com.example.firesecure.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -28,7 +26,7 @@ import java.util.ArrayList;
 
 public class ChoseFloor extends AppCompatActivity implements View.OnClickListener {
 
-    private String id_divis;
+    private String id_build;
     private boolean flag = false;
 
     private EditText enter_search;
@@ -36,18 +34,23 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
     private TextView no_data;
     private FloatingActionButton search_fub, add_fub;
     private RecyclerView recyclerView;
-    private ChoseBuildingDatabase myDB;
+    private ChoseFloorDatabase myDB;
 
+    private ArrayList<String> id_floor = new ArrayList<>();
+    private ArrayList<String> num_floor = new ArrayList<>();
+    private ArrayList<String> status_floor = new ArrayList<>();
+    private ArrayList<String> entry_num = new ArrayList<>();
+    private ArrayList<String> length_lever = new ArrayList<>();
+    private ArrayList<String> area_size_floor = new ArrayList<>();
     private ArrayList<String> id_building = new ArrayList<>();
-    private ArrayList<String> name_building = new ArrayList<>();
-    private ArrayList<String> depo_building = new ArrayList<>();
-    private ArrayList<String> address_building = new ArrayList<>();
-    private ArrayList<String> id_divis_array = new ArrayList<>();
+
+    private ArrayList<String> id_floor_final = new ArrayList<>();
+    private ArrayList<String> num_floor_final = new ArrayList<>();
+    private ArrayList<String> status_floor_final = new ArrayList<>();
+    private ArrayList<String> entry_num_final = new ArrayList<>();
+    private ArrayList<String> length_lever_final = new ArrayList<>();
+    private ArrayList<String> area_size_floor_final = new ArrayList<>();
     private ArrayList<String> id_building_final = new ArrayList<>();
-    private ArrayList<String> name_building_final = new ArrayList<>();
-    private ArrayList<String> depo_building_final = new ArrayList<>();
-    private ArrayList<String> address_building_final = new ArrayList<>();
-    private ArrayList<String> id_divis_array_final = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,12 +59,14 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // делаем полноэкранное
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.chose_building);
+        setContentView(R.layout.chose_floor);
 
         init();
     }
 
     private void init() {
+        myDB = new ChoseFloorDatabase(ChoseFloor.this);
+
         enter_search = (EditText) findViewById(R.id.enter_search);
 
         empty_imageview = (ImageView) findViewById(R.id.empty_imageview);
@@ -76,14 +81,14 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         Bundle extras = getIntent().getExtras();
-        id_divis = extras.getString("id");
+        id_build = extras.getString("id");
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        myDB = new ChoseBuildingDatabase(ChoseFloor.this);
+        myDB = new ChoseFloorDatabase(ChoseFloor.this);
 
         if (!flag) {
             clearAllArray();
@@ -93,14 +98,21 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
 
         flag = false;
 
-        for (int i = 0; i < name_building.size(); i++) {
-            Log.d("main", id_building.get(i) + " - id");
-            Log.d("main", name_building.get(i) + " - name");
+        for (int i = 0; i < num_floor.size(); i++) {
+            Log.d("main", id_floor.get(i) + " - id");
+            Log.d("main", num_floor.get(i) + " - name");
         }
 
-        CustomAdapterChoseBuilding customAdapterChoseBuilding = new CustomAdapterChoseBuilding(ChoseFloor.this, this,
-                id_building_final, name_building_final, depo_building_final, address_building_final, id_divis_array_final);
-        recyclerView.setAdapter(customAdapterChoseBuilding);
+        CustomAdapterChoseFloor CustomAdapterChoseFloor =
+                new CustomAdapterChoseFloor(ChoseFloor.this, this,
+                id_floor_final,
+                num_floor_final,
+                status_floor_final,
+                entry_num_final,
+                length_lever_final,
+                area_size_floor_final,
+                id_building_final);
+        recyclerView.setAdapter(CustomAdapterChoseFloor);
         recyclerView.setLayoutManager(new LinearLayoutManager(ChoseFloor.this));
     }
 
@@ -108,64 +120,63 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.add_fub:
-                Intent intent = new Intent(this, AddBuilding.class);
-                intent.putExtra("id", id_divis);
+                Intent intent = new Intent(this, AddFloor.class);
+                intent.putExtra("id", id_build);
                 startActivity(intent);
                 break;
             case R.id.search_fub:
-                String buildSearch = enter_search.getText().toString().trim(); // сюда вводится наименования сооружния
-                searchResult(buildSearch);
+                searchResult(enter_search.getText().toString().trim());
                 break;
         }
     }
 
-    private void searchResult(String buildSearch) {
+    private void searchResult(String numFloor) {
 
         storeDataInArrays(); // на выход получаю правильно заполненые final массивы
 
         int index = 0;
         ArrayList<String> array = new ArrayList<>();
-        if (name_building_final.contains(buildSearch) || address_building_final.contains(buildSearch)) {
+        if (num_floor_final.contains(numFloor)) {
+            index = num_floor_final.indexOf(numFloor);
+            flag = true;
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
-            flag = true;
-            if (name_building_final.contains(buildSearch)) {
-                index = name_building_final.indexOf(buildSearch);
-            } else if (address_building_final.contains(buildSearch)) {
-                index = address_building_final.indexOf(buildSearch);
-            }
+            array.add(id_floor_final.get(index));
+            array.add(num_floor_final.get(index));
+            array.add(status_floor_final.get(index));
+            array.add(entry_num_final.get(index));
+            array.add(length_lever_final.get(index));
+            array.add(area_size_floor_final.get(index));
             array.add(id_building_final.get(index));
-            array.add(name_building_final.get(index));
-            array.add(depo_building_final.get(index));
-            array.add(address_building_final.get(index));
-            array.add(id_divis_array_final.get(index));
 
+            id_floor_final.clear();
+            num_floor_final.clear();
+            status_floor_final.clear();
+            entry_num_final.clear();
+            length_lever_final.clear();
+            area_size_floor_final.clear();
             id_building_final.clear();
-            name_building_final.clear();
-            depo_building_final.clear();
-            address_building_final.clear();
-            id_divis_array_final.clear();
 
-            id_building_final.add(array.get(0));
-            name_building_final.add(array.get(1));
-            depo_building_final.add(array.get(2));
-            address_building_final.add(array.get(3));
-            id_divis_array_final.add(array.get(4));
+            id_floor_final.add(array.get(0));
+            num_floor_final.add(array.get(1));
+            status_floor_final.add(array.get(2));
+            entry_num_final.add(array.get(3));
+            length_lever_final.add(array.get(4));
+            area_size_floor_final.add(array.get(5));
+            id_building_final.add(array.get(6));
 
             array.clear();
 
             onResume();
 
-        } else if (buildSearch.equals("")) {
+        } else if (numFloor.equals("")) {
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
 
             onResume();
-
         } else {
-
             flag = true;
             clearAllArray();
 
@@ -178,17 +189,21 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
     }
 
     private void clearAllArray() {
+        id_floor.clear();
+        num_floor.clear();
+        status_floor.clear();
+        entry_num.clear();
+        length_lever.clear();
+        area_size_floor.clear();
         id_building.clear();
-        name_building.clear();
-        depo_building.clear();
-        address_building.clear();
-        id_divis_array.clear();
 
+        id_floor_final.clear();
+        num_floor_final.clear();
+        status_floor_final.clear();
+        entry_num_final.clear();
+        length_lever_final.clear();
+        area_size_floor_final.clear();
         id_building_final.clear();
-        name_building_final.clear();
-        depo_building_final.clear();
-        address_building_final.clear();
-        id_divis_array_final.clear();
     }
 
     private void storeDataInArrays() {
@@ -200,11 +215,13 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
         } else { // если БД не пустой
             Log.d("main", String.valueOf(cursor.getCount())); // смотрю курсор
             while (cursor.moveToNext()) { // заполняю массивы всеми данными из курсора, который берется из БД
-                id_building.add(cursor.getString(0));
-                name_building.add(cursor.getString(1));
-                depo_building.add(cursor.getString(2));
-                address_building.add(cursor.getString(3));
-                id_divis_array.add(cursor.getString(4));
+                id_floor.add(cursor.getString(0));
+                num_floor.add(cursor.getString(1));
+                status_floor.add(cursor.getString(2));
+                entry_num.add(cursor.getString(3));
+                length_lever.add(cursor.getString(4));
+                area_size_floor.add(cursor.getString(5));
+                id_building.add(cursor.getString(6));
             }
             checkDivision(); // делаю рабочими конечные массивы
             if (id_building_final.size() == 0) { // если в пожарном подразделении нету сооружений
@@ -212,22 +229,27 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
                 no_data.setVisibility(View.VISIBLE);
                 recyclerView.setVisibility(View.GONE);
             }
+            id_floor.clear();
+            num_floor.clear();
+            status_floor.clear();
+            entry_num.clear();
+            length_lever.clear();
+            area_size_floor.clear();
             id_building.clear();
-            name_building.clear();
-            depo_building.clear();
-            address_building.clear();
-            id_divis_array.clear();
         }
     }
 
     private void checkDivision() {
-        for (int i = 0; i < id_divis_array.size(); i++) {
-            if (id_divis.equals(id_divis_array.get(i))) {
+        for (int i = 0; i < id_building.size(); i++) {
+            if (id_build.equals(id_building.get(i))) {
+
+                id_floor_final.add(id_floor.get(i));
+                num_floor_final.add(num_floor.get(i));
+                status_floor_final.add(status_floor.get(i));
+                entry_num_final.add(entry_num.get(i));
+                length_lever_final.add(length_lever.get(i));
+                area_size_floor_final.add(area_size_floor.get(i));
                 id_building_final.add(id_building.get(i));
-                name_building_final.add(name_building.get(i));
-                depo_building_final.add(depo_building.get(i));
-                address_building_final.add(address_building.get(i));
-                id_divis_array_final.add(id_divis_array.get(i));
             }
         }
     }
