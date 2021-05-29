@@ -50,10 +50,34 @@
         <activity android:name=".View.DocumentWayBuilding">
 
         </activity>
+        <activity android:name=".View.DocumentPlanFloor">
+
+        </activity>
         <activity android:name=".View.ChoseFloor">
 
         </activity>
         <activity android:name=".View.AddFloor">
+
+        </activity>
+        <activity android:name=".View.InfoFloor">
+
+        </activity>
+        <activity android:name=".View.DocumentPlanFloorInfo">
+
+        </activity>
+        <activity android:name=".View.ChoseRoom">
+
+        </activity>
+        <activity android:name=".View.AddRoom">
+
+        </activity>
+        <activity android:name=".View.DocumentPlanRoom">
+
+        </activity>
+        <activity android:name=".View.DocumentPlanRoomInfo">
+
+        </activity>
+        <activity android:name=".View.InfoRoom">
 
         </activity>
     </application>

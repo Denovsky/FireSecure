@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -75,8 +76,8 @@ public class ChoseFloorDatabase extends SQLiteOpenHelper {
         cv.put(ENTRY_NUM, array.get(2));
         cv.put(LENGTH_LEVER, array.get(3));
         cv.put(SIZE_FLOOR, array.get(4));
-
         cv.put(ID_BUILDING, array.get(5));
+        cv.put(PLAN_FLOOR, array.get(6));
 
         long result = db.insert(TABLE_NAME, null, cv);
         if (result == -1) {
@@ -86,7 +87,7 @@ public class ChoseFloorDatabase extends SQLiteOpenHelper {
         }
     }
 
-    public void deleteDivision(String id) {
+    public void deleteFloor(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{id});
         if (result == -1) {
@@ -103,7 +104,7 @@ public class ChoseFloorDatabase extends SQLiteOpenHelper {
 
     public Cursor getData(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(TABLE_NAME, null, COLUMN_ID + " = ?", new String[]{id}, null, null, null);
+        Cursor cursor = db.query(TABLE_NAME, null,   "id_floor = ?", new String[]{id}, null, null, null);
         return cursor;
     }
 }

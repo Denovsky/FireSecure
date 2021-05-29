@@ -18,20 +18,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firesecure.R;
 import com.example.firesecure.View.InfoBuilding;
+import com.example.firesecure.View.InfoFloor;
 
 import java.util.ArrayList;
 
 public class CustomAdapterChoseFloor extends RecyclerView.Adapter<CustomAdapterChoseFloor.MyViewHolder> {
 
-    private Context context;
     private Activity activity;
-    private ArrayList<String> id_floor,
-            num_floor,
-            status_floor,
-            entry_num,
-            length_lever,
-            area_size_floor,
-            id_building;
+    private Context context;
+    private ArrayList<String> id_floor, num_floor, status_floor, entry_num, length_lever, area_size_floor, id_building;
 
     public CustomAdapterChoseFloor(Activity activity, Context context,
                                    ArrayList<String> id_floor,
@@ -69,7 +64,7 @@ public class CustomAdapterChoseFloor extends RecyclerView.Adapter<CustomAdapterC
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, InfoBuilding.class);
+                Intent intent = new Intent(context, InfoFloor.class);
                 intent.putExtra("id_floor", String.valueOf(id_floor.get(position)));
                 intent.putExtra("num", String.valueOf(num_floor.get(position)));
                 intent.putExtra("status", String.valueOf(status_floor.get(position)));

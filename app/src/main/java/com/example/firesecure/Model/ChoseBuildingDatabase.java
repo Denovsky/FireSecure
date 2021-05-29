@@ -213,7 +213,8 @@ public class ChoseBuildingDatabase extends SQLiteOpenHelper {
 
     public Cursor getData(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(TABLE_NAME, null, "id_building = ?", new String[]{id}, null, null, null);
+        String some_shit = id;
+        Cursor cursor = db.query(TABLE_NAME, null, "id_building = ?", new String[]{some_shit}, null, null, null);
         return cursor;
     }
 }
