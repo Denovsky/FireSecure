@@ -88,9 +88,12 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onResume() {
         super.onResume();
-        myDB = new ChoseFloorDatabase(ChoseFloor.this);
 
         if (!flag) {
+            empty_imageview.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+
             clearAllArray();
 
             storeDataInArrays(); // на выход получаю правильно заполненые final массивы

@@ -100,9 +100,12 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onResume() {
         super.onResume();
-        myDB = new ChoseRoomDatabase(this);
 
         if (!flag) {
+            empty_imageview.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+
             clearAllArray();
 
             storeDataInArrays(); // на выход получаю правильно заполненые final массивы

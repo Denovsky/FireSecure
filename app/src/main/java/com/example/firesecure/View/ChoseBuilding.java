@@ -62,6 +62,8 @@ public class ChoseBuilding extends AppCompatActivity implements View.OnClickList
     }
 
     private void init() {
+        myDB = new ChoseBuildingDatabase(ChoseBuilding.this);
+
         enter_search = (EditText) findViewById(R.id.enter_search);
 
         empty_imageview = (ImageView) findViewById(R.id.empty_imageview);
@@ -83,9 +85,12 @@ public class ChoseBuilding extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onResume() {
         super.onResume();
-        myDB = new ChoseBuildingDatabase(ChoseBuilding.this);
 
         if (!flag) {
+            empty_imageview.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+
             clearAllArray();
 
             storeDataInArrays(); // на выход получаю правильно заполненые final массивы

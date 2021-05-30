@@ -77,11 +77,11 @@ public class ChoseDivision extends AppCompatActivity implements View.OnClickList
         myDB = new ChoseDivisionDatabase(ChoseDivision.this);
 
         if (!flag) {
+            empty_imageview.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
 
-            id_divis.clear();
-            num_divis.clear();
-            depo_divis.clear();
-            town_divis.clear();
+            clearAllArray();
 
             storeDataInArrays();
         }
@@ -110,6 +110,13 @@ public class ChoseDivision extends AppCompatActivity implements View.OnClickList
                 searchResult(divisSearch);
                 break;
         }
+    }
+
+    private void clearAllArray(){
+        id_divis.clear();
+        num_divis.clear();
+        depo_divis.clear();
+        town_divis.clear();
     }
 
     private void searchResult(String divisSearch) {
@@ -159,14 +166,16 @@ public class ChoseDivision extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    void storeDataInArrays() {
+    private void storeDataInArrays() {
         Cursor cursor = myDB.readAllData();
         if (cursor.getCount() == 0) {
             empty_imageview.setVisibility(View.VISIBLE);
             no_data.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
         } else {
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
             Log.d("main", String.valueOf(cursor.getCount()));
             while (cursor.moveToNext()) {
                 id_divis.add(cursor.getString(0));

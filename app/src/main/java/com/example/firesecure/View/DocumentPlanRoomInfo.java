@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -61,18 +62,22 @@ public class DocumentPlanRoomInfo extends AppCompatActivity {
     }
 
     private void AddImageView(String id) {
-        Cursor cursor = myDB.getData(id);
-        if (cursor.moveToFirst()) {
-            Uri planUri = Uri.parse(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PLAN_ROOM)));
-            String num = cursor.getString(cursor.getColumnIndexOrThrow(myDB.NUMBER_ROOM));
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                final int takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION;
-                ContentResolver resolver = activity.getContentResolver();
-                resolver.takePersistableUriPermission(planUri, takeFlags);
-                schema_evacuation.setVisibility(View.VISIBLE);
-                schema_evacuation.setImageURI(planUri);
-                header.setText("Схема помещения №" + num);
+        try {
+            Cursor cursor = myDB.getData(id);
+            if (cursor.moveToFirst()) {
+                Uri planUri = Uri.parse(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PLAN_ROOM)));
+                String num = cursor.getString(cursor.getColumnIndexOrThrow(myDB.NUMBER_ROOM));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    final int takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION;
+                    ContentResolver resolver = activity.getContentResolver();
+                    resolver.takePersistableUriPermission(planUri, takeFlags);
+                    schema_evacuation.setVisibility(View.VISIBLE);
+                    schema_evacuation.setImageURI(planUri);
+                    header.setText("Схема помещения №" + num);
+                }
             }
+        } catch (Exception e) {
+            Toast.makeText(context, "Добавьте изображение", Toast.LENGTH_LONG).show();
         }
     }
 }

@@ -103,7 +103,7 @@ public class CustomAdapterChoseRoom extends RecyclerView.Adapter<CustomAdapterCh
                 intent.putExtra("rv_dm_vv_rtt", String.valueOf(rv_dm_vv_rtt.get(position)));
                 intent.putExtra("num_entry", String.valueOf(num_entry.get(position)));
                 intent.putExtra("area_size_room", String.valueOf(area_size_room.get(position)));
-                intent.putExtra("id_floor_array", String.valueOf(id_floor_array.get(position)));
+                intent.putExtra("id_floor", String.valueOf(id_floor_array.get(position)));
 
                 activity.startActivity(intent);
             }
