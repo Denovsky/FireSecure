@@ -28,6 +28,8 @@ public class CustomAdapterChoseRoom extends RecyclerView.Adapter<CustomAdapterCh
     private Activity activity;
     private Context context;
 
+    private String id_divis;
+
     private ArrayList<String> id_room = new ArrayList<>();
     private ArrayList<String> num_room = new ArrayList<>();
     private ArrayList<String> name_room = new ArrayList<>();
@@ -41,6 +43,7 @@ public class CustomAdapterChoseRoom extends RecyclerView.Adapter<CustomAdapterCh
     private ArrayList<String> num_entry = new ArrayList<>();
     private ArrayList<String> area_size_room = new ArrayList<>();
     private ArrayList<String> id_floor_array = new ArrayList<>();
+    private ArrayList<String> id_build_array = new ArrayList<>();
 
     public CustomAdapterChoseRoom(Activity activity, Context context,
                                   ArrayList<String> id_room,
@@ -55,7 +58,9 @@ public class CustomAdapterChoseRoom extends RecyclerView.Adapter<CustomAdapterCh
                                   ArrayList<String> rv_dm_vv_rtt,
                                   ArrayList<String> num_entry,
                                   ArrayList<String> area_size_room,
-                                  ArrayList<String> id_floor_array) {
+                                  ArrayList<String> id_floor_array,
+                                  ArrayList<String> id_build_array,
+                                  String id_divis) {
         this.activity = activity;
         this.context = context;
 
@@ -72,6 +77,8 @@ public class CustomAdapterChoseRoom extends RecyclerView.Adapter<CustomAdapterCh
         this.num_entry = num_entry;
         this.area_size_room = area_size_room;
         this.id_floor_array = id_floor_array;
+        this.id_build_array = id_build_array;
+        this.id_divis = id_divis;
     }
 
     @NonNull
@@ -85,7 +92,7 @@ public class CustomAdapterChoseRoom extends RecyclerView.Adapter<CustomAdapterCh
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
-        holder.SPCH_divis.setText("Помещение №" + num_room.get(position));
+        holder.SPCH_divis.setText(name_room.get(position) + " " + num_room.get(position));
         //Recyclerview onClickListener
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +111,8 @@ public class CustomAdapterChoseRoom extends RecyclerView.Adapter<CustomAdapterCh
                 intent.putExtra("num_entry", String.valueOf(num_entry.get(position)));
                 intent.putExtra("area_size_room", String.valueOf(area_size_room.get(position)));
                 intent.putExtra("id_floor", String.valueOf(id_floor_array.get(position)));
+                intent.putExtra("id_build", String.valueOf(id_build_array.get(position)));
+                intent.putExtra("id_divis", String.valueOf(id_divis));
 
                 activity.startActivity(intent);
             }

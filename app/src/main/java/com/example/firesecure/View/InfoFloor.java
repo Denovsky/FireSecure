@@ -22,7 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class InfoFloor extends AppCompatActivity implements View.OnClickListener {
 
     private ChoseFloorDatabase myDB;
-    private String id_floor;
+    private String id_floor, id_build, id_divis;
 
     private TextView header;
     private TextView num_floor, status_floor, entry_num, length_lever, area_size_floor;
@@ -45,6 +45,9 @@ public class InfoFloor extends AppCompatActivity implements View.OnClickListener
     private void init() {
         Bundle extras = getIntent().getExtras();
         id_floor = extras.getString("id_floor");
+        id_build = extras.getString("id_build");
+        id_divis = extras.getString("id_divis");
+
         myDB = new ChoseFloorDatabase(this);
 
         header = (TextView) findViewById(R.id.header);
@@ -79,10 +82,15 @@ public class InfoFloor extends AppCompatActivity implements View.OnClickListener
                 break;
             case R.id.places_btn:
                 intent = new Intent(this, ChoseRoom.class);
-                intent.putExtra("id", id_floor);
+                intent.putExtra("id_floor", id_floor);
+                intent.putExtra("id_build", id_build);
                 startActivity(intent);
                 break;
             case R.id.calculate_but:
+                intent = new Intent(this, ChoseCalc.class);
+                intent.putExtra("id_build", id_build);
+                intent.putExtra("id_divis", id_divis);
+                startActivity(intent);
                 break;
             case R.id.del_fub:
                 break;

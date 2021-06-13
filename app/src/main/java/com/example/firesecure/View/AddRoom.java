@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class AddRoom extends AppCompatActivity implements View.OnClickListener {
 
     private ChoseRoomDatabase myDB;
-    private String id_floor;
+    private String id_floor, id_build;
     private String strokeUriPath;
 
     private TextView header;
@@ -80,7 +80,8 @@ public class AddRoom extends AppCompatActivity implements View.OnClickListener {
         save_btn.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
-        id_floor = extras.getString("id");
+        id_floor = extras.getString("id_floor");
+        id_build = extras.getString("id_build");
 
         FillHeader(id_floor);
     }
@@ -144,6 +145,7 @@ public class AddRoom extends AppCompatActivity implements View.OnClickListener {
         arrayList.add(area_size_room.getText().toString().trim());
 
         arrayList.add(id_floor);
+        arrayList.add(id_build);
         arrayList.add(strokeUriPath);
 
         myDB.addRoom(arrayList);

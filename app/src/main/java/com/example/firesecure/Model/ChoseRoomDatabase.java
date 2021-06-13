@@ -33,6 +33,7 @@ public class ChoseRoomDatabase extends SQLiteOpenHelper {
     public static final String NUM_ENTRY = "num_entry";
     public static final String SIZE_ROOM = "area_size_room";
     public static final String ID_FLOOR = "id_floor";
+    public static final String ID_BUILD = "id_build";
 
     public static final String PLAN_ROOM = "plan_room";
 
@@ -57,6 +58,7 @@ public class ChoseRoomDatabase extends SQLiteOpenHelper {
                 NUM_ENTRY + " TEXT, " +
                 SIZE_ROOM + " TEXT, " +
                 ID_FLOOR + " TEXT, " +
+                ID_BUILD + " TEXT, " +
                 PLAN_ROOM + " TEXT);";
         db.execSQL(query);
     }
@@ -94,7 +96,8 @@ public class ChoseRoomDatabase extends SQLiteOpenHelper {
         cv.put(NUM_ENTRY, array.get(9));
         cv.put(SIZE_ROOM, array.get(10));
         cv.put(ID_FLOOR, array.get(11));
-        cv.put(PLAN_ROOM, array.get(12));
+        cv.put(ID_BUILD, array.get(12));
+        cv.put(PLAN_ROOM, array.get(13));
 
         long result = db.insert(TABLE_NAME, null, cv);
         if (result == -1) {

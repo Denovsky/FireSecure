@@ -23,6 +23,7 @@ public class InfoRoom extends AppCompatActivity implements View.OnClickListener 
     private ChoseRoomDatabase myDB;
     private String id_room;
     private String id_floor;
+    private String id_divis;
 
     private TextView header;
     private TextView num_room,
@@ -55,6 +56,7 @@ public class InfoRoom extends AppCompatActivity implements View.OnClickListener 
         Bundle extras = getIntent().getExtras();
         id_room = extras.getString("id_room");
         id_floor = extras.getString("id_floor");
+        id_divis = extras.getString("id_divis");
         myDB = new ChoseRoomDatabase(this);
 
         header = (TextView) findViewById(R.id.header);

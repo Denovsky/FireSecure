@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".View.AddCO">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_line"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Заголовок"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="35sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_line"
+            android:layout_weight="5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/building_R_1_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:visibility="gone"
+                                    android:text="Предел огнестойкости строительных конструкций, (не менее) несущие элементы здания (R):"
+                                    android:background="@drawable/bg_lower_line"
+                                    android:gravity="center"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/building_R_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:background="@drawable/bg_button"
+                                    android:gravity="center"
+                                    android:hint="Предел огнестойкости строительных конструкций, (не менее) несущие элементы здания (R):"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/building_E_1_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:visibility="gone"
+                                    android:text="Предел огнестойкости строительных конструкций, (не менее) наружные не несущие стены (E):"
+                                    android:background="@drawable/bg_lower_line"
+                                    android:gravity="center"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/building_E_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:background="@drawable/bg_button"
+                                    android:gravity="center"
+                                    android:hint="Предел огнестойкости строительных конструкций, (не менее) наружные не несущие стены (E):"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/building_REI_1_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:visibility="gone"
+                                    android:text="Предел огнестойкости строительных конструкций, (не менее) перекрытия междуэтажные (REI):"
+                                    android:background="@drawable/bg_lower_line"
+                                    android:gravity="center"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/building_REI_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:background="@drawable/bg_button"
+                                    android:gravity="center"
+                                    android:hint="Предел огнестойкости строительных конструкций, (не менее) перекрытия междуэтажные (REI):"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/building_RE_1_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:visibility="gone"
+                                    android:text="Предел огнестойкости строительных конструкций, (не менее) элементы бесчердачных покрытий настилы (RE):"
+                                    android:background="@drawable/bg_lower_line"
+                                    android:gravity="center"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/building_RE_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:background="@drawable/bg_button"
+                                    android:gravity="center"
+                                    android:hint="Предел огнестойкости строительных конструкций, (не менее) элементы бесчердачных покрытий настилы (RE):"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/building_R_2_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:visibility="gone"
+                                    android:text="Предел огнестойкости строительных конструкций, (не менее) элементы бесчердачных покрытий фермы, балки, прогоны (R):"
+                                    android:background="@drawable/bg_lower_line"
+                                    android:gravity="center"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/building_R_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:background="@drawable/bg_button"
+                                    android:gravity="center"
+                                    android:hint="Предел огнестойкости строительных конструкций, (не менее) элементы бесчердачных покрытий фермы, балки, прогоны (R):"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/building_REI_2_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:visibility="gone"
+                                    android:text="Предел огнестойкости строительных конструкций, (не менее) лестничные клетки, внутренние стены (REI):"
+                                    android:background="@drawable/bg_lower_line"
+                                    android:gravity="center"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/building_REI_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:background="@drawable/bg_button"
+                                    android:gravity="center"
+                                    android:hint="Предел огнестойкости строительных конструкций, (не менее) лестничные клетки, внутренние стены (REI):"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/building_R_3_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:visibility="gone"
+                                    android:text="Предел огнестойкости строительных конструкций, (не менее) лестничные клетки, марши и площадки лестниц (R):"
+                                    android:background="@drawable/bg_lower_line"
+                                    android:gravity="center"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/building_R_3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:layout_marginRight="12dp"
+                                    android:background="@drawable/bg_button"
+                                    android:gravity="center"
+                                    android:hint="Предел огнестойкости строительных конструкций, (не менее) лестничные клетки, марши и площадки лестниц (R):"
+                                    android:paddingTop="16dp"
+                                    android:paddingBottom="16dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="#808080"
+                                    android:textSize="33sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/save_btn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="50dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/submit"
+        app:srcCompat="@drawable/save_btn"
+        android:visibility="visible"
+        app:fabCustomSize="100dp"
+        app:maxImageSize="50dp"
+        app:backgroundTint="@color/black"
+        app:borderWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

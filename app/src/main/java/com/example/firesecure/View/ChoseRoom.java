@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class ChoseRoom extends AppCompatActivity implements View.OnClickListener {
 
-    private String id_floor;
+    private String id_floor, id_build, id_divis;
     private boolean flag = false;
 
     private EditText enter_search;
@@ -49,6 +49,7 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
     private ArrayList<String> num_entry = new ArrayList<>();
     private ArrayList<String> area_size_room = new ArrayList<>();
     private ArrayList<String> id_floor_array = new ArrayList<>();
+    private ArrayList<String> id_build_array = new ArrayList<>();
 
     private ArrayList<String> id_room_final = new ArrayList<>();
     private ArrayList<String> num_room_final = new ArrayList<>();
@@ -63,6 +64,7 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
     private ArrayList<String> num_entry_final = new ArrayList<>();
     private ArrayList<String> area_size_room_final = new ArrayList<>();
     private ArrayList<String> id_floor_array_final = new ArrayList<>();
+    private ArrayList<String> id_build_array_final = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -93,7 +95,9 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         Bundle extras = getIntent().getExtras();
-        id_floor = extras.getString("id");
+        id_floor = extras.getString("id_floor");
+        id_build = extras.getString("id_build");
+        id_divis = extras.getString("id_divis");
 
     }
 
@@ -131,7 +135,9 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
                         rv_dm_vv_rtt_final,
                         num_entry_final,
                         area_size_room_final,
-                        id_floor_array_final);
+                        id_floor_array_final,
+                        id_build_array_final,
+                        id_divis);
         recyclerView.setAdapter(customAdapterChoseRoom);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -141,7 +147,8 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.add_fub:
                 Intent intent = new Intent(this, AddRoom.class);
-                intent.putExtra("id", id_floor);
+                intent.putExtra("id_floor", id_floor);
+                intent.putExtra("id_build", id_build);
                 startActivity(intent);
                 break;
             case R.id.search_fub:
@@ -175,6 +182,7 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
             array.add(num_entry_final.get(index));
             array.add(area_size_room_final.get(index));
             array.add(id_floor_array_final.get(index));
+            array.add(id_build_array_final.get(index));
 
             id_room_final.clear();
             num_room_final.clear();
@@ -189,6 +197,7 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
             num_entry_final.clear();
             area_size_room_final.clear();
             id_floor_array_final.clear();
+            id_build_array_final.clear();
 
             id_room_final.add(array.get(0));
             num_room_final.add(array.get(1));
@@ -203,6 +212,7 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
             num_entry_final.add(array.get(10));
             area_size_room_final.add(array.get(11));
             id_floor_array_final.add(array.get(12));
+            id_build_array_final.add(array.get(13));
 
             array.clear();
 
@@ -240,6 +250,7 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
         num_entry.clear();
         area_size_room.clear();
         id_floor_array.clear();
+        id_build_array.clear();
 
         id_room_final.clear();
         num_room_final.clear();
@@ -254,6 +265,7 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
         num_entry_final.clear();
         area_size_room_final.clear();
         id_floor_array_final.clear();
+        id_build_array_final.clear();
     }
 
     private void storeDataInArrays() {
@@ -278,8 +290,14 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
                 num_entry.add(cursor.getString(10));
                 area_size_room.add(cursor.getString(11));
                 id_floor_array.add(cursor.getString(12));
+                id_build_array.add(cursor.getString(13));
             }
-            checkDivision(); // делаю рабочими конечные массивы
+            if (id_build != null && id_floor == null) { // в случае если пользователь заходит из сооружения
+                fillArrays("build");
+                add_fub.setVisibility(View.GONE);
+            } else if (id_build != null && id_floor != null) { // в случае если пользователь заходит из этажа
+                fillArrays(); // делаю рабочими конечные массивы
+            }
             if (id_room_final.size() == 0) { // если в сооружении нету комнат
                 empty_imageview.setVisibility(View.VISIBLE);
                 no_data.setVisibility(View.VISIBLE);
@@ -298,10 +316,11 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
             num_entry.clear();
             area_size_room.clear();
             id_floor_array.clear();
+            id_build_array.clear();
         }
     }
 
-    private void checkDivision() {
+    private void fillArrays() {
         for (int i = 0; i < id_floor_array.size(); i++) {
             if (id_floor.equals(id_floor_array.get(i))) {
                 id_room_final.add(id_room.get(i));
@@ -317,6 +336,28 @@ public class ChoseRoom extends AppCompatActivity implements View.OnClickListener
                 num_entry_final.add(num_entry.get(i));
                 area_size_room_final.add(area_size_room.get(i));
                 id_floor_array_final.add(id_floor_array.get(i));
+                id_build_array_final.add(id_build_array.get(i));
+            }
+        }
+    }
+
+    private void fillArrays(String someText) {
+        for (int i = 0; i < id_floor_array.size(); i++) {
+            if (id_build.equals(id_build_array.get(i))) {
+                id_room_final.add(id_room.get(i));
+                num_room_final.add(num_room.get(i));
+                name_room_final.add(name_room.get(i));
+                status_room_final.add(status_room.get(i));
+                length_sleeve_final.add(length_sleeve.get(i));
+                state_num_people_in_final.add(state_num_people_in.get(i));
+                approx_num_people_in_final.add(approx_num_people_in.get(i));
+                room_with_ahs_final.add(room_with_ahs.get(i));
+                room_with_sanitary_final.add(room_with_sanitary.get(i));
+                rv_dm_vv_rtt_final.add(rv_dm_vv_rtt.get(i));
+                num_entry_final.add(num_entry.get(i));
+                area_size_room_final.add(area_size_room.get(i));
+                id_floor_array_final.add(id_floor_array.get(i));
+                id_build_array_final.add(id_build_array.get(i));
             }
         }
     }

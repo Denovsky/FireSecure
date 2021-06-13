@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".View.AddTech">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_line"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Заголовок"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="35sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_line"
+            android:layout_weight="5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <Spinner
+                                android:id="@+id/mark"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Марка:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                    android:hint="Тип пожарного автомобиля:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/combat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Боевой расчёт:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/tank_size"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Ёмкость цистерны:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/foam_size"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Ёмкость для пенообразователя:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/num_sleeve_51"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Количество рукавов диаметром 51мм:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/num_sleeve_66"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Количество рукавов диаметром 66мм:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/num_sleeve_77"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Количество рукавов диаметром 77мм:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/num_node_type_A"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint='Количество пожарный стволов группы "A":'
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/num_node_type_B"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint='Количество пожарный стволов группы "Б":'
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/num_node_universal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Количество универсальных П.С:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/num_node_portable"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Количество переносных Л.С:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_lower_line"
+                            android:padding="12dp">
+
+                            <EditText
+                                android:id="@+id/num_node_static"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@drawable/bg_button"
+                                android:gravity="center"
+                                android:hint="Количество стационарных Л.С:"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#808080"
+                                android:textSize="33sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/save_btn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="50dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/submit"
+        app:srcCompat="@drawable/save_btn"
+        android:visibility="visible"
+        app:fabCustomSize="100dp"
+        app:maxImageSize="50dp"
+        app:backgroundTint="@color/black"
+        app:borderWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

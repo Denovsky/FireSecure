@@ -26,6 +26,7 @@ public class CustomAdapterChoseFloor extends RecyclerView.Adapter<CustomAdapterC
 
     private Activity activity;
     private Context context;
+    private String id_divis;
     private ArrayList<String> id_floor, num_floor, status_floor, entry_num, length_lever, area_size_floor, id_building;
 
     public CustomAdapterChoseFloor(Activity activity, Context context,
@@ -35,7 +36,8 @@ public class CustomAdapterChoseFloor extends RecyclerView.Adapter<CustomAdapterC
                                    ArrayList<String> entry_num,
                                    ArrayList<String> length_lever,
                                    ArrayList<String> area_size_floor,
-                                   ArrayList<String> id_building) {
+                                   ArrayList<String> id_building,
+                                   String id_divis) {
         this.activity = activity;
         this.context = context;
 
@@ -46,6 +48,7 @@ public class CustomAdapterChoseFloor extends RecyclerView.Adapter<CustomAdapterC
         this.length_lever = length_lever;
         this.area_size_floor = area_size_floor;
         this.id_building = id_building;
+        this.id_divis = id_divis;
     }
 
     @NonNull
@@ -71,7 +74,8 @@ public class CustomAdapterChoseFloor extends RecyclerView.Adapter<CustomAdapterC
                 intent.putExtra("entry", String.valueOf(entry_num.get(position)));
                 intent.putExtra("length_lever", String.valueOf(length_lever.get(position)));
                 intent.putExtra("area_size", String.valueOf(area_size_floor.get(position)));
-                intent.putExtra("id_building", String.valueOf(id_building.get(position)));
+                intent.putExtra("id_build", String.valueOf(id_building.get(position)));
+                intent.putExtra("id_divis", String.valueOf(id_divis));
                 activity.startActivity(intent);
             }
         });

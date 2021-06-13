@@ -9,10 +9,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FireSecure"
-        android:requestLegacyExternalStorage="true">
+        android:theme="@style/Theme.Design.Light">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".View.ChoseDivision">
-            
+
         </activity>
         <activity android:name=".View.AddDivision">
 
@@ -78,6 +78,75 @@
 
         </activity>
         <activity android:name=".View.InfoRoom">
+
+        </activity>
+        <activity android:name=".View.ChoseHydrant">
+
+        </activity>
+        <activity android:name=".View.AddHydrant">
+
+        </activity>
+        <activity android:name=".View.InfoHydrant">
+
+        </activity>
+        <activity android:name=".View.ChosePool">
+
+        </activity>
+        <activity android:name=".View.AddPool">
+
+        </activity>
+        <activity android:name=".View.InfoPool">
+
+        </activity>
+        <activity android:name=".View.ChoseEmployee">
+
+        </activity>
+        <activity android:name=".View.AddEmployee">
+
+        </activity>
+        <activity android:name=".View.InfoEmployee">
+
+        </activity>
+        <activity android:name=".View.ChoseTech">
+
+        </activity>
+        <activity android:name=".View.AddTech">
+
+        </activity>
+        <activity android:name=".View.InfoTech">
+
+        </activity>
+        <activity android:name=".View.ReferenceData">
+
+        </activity>
+        <activity android:name=".View.ChoseData">
+
+        </activity>
+        <activity android:name=".View.AddData">
+
+        </activity>
+        <activity android:name=".View.InfoData">
+
+        </activity>
+        <activity android:name=".View.AddCO">
+
+        </activity>
+        <activity android:name=".View.ChoseFireres">
+
+        </activity>
+        <activity android:name=".View.InfoPushHydrant">
+
+        </activity>
+        <activity android:name=".View.AddPushHydrant">
+
+        </activity>
+        <activity android:name=".View.ChoseCalc">
+
+        </activity>
+        <activity android:name=".View.CalcArea">
+
+        </activity>
+        <activity android:name=".View.CalcAll">
 
         </activity>
     </application>

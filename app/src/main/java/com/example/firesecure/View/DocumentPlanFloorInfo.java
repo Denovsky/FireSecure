@@ -56,7 +56,11 @@ public class DocumentPlanFloorInfo extends AppCompatActivity {
         setContentView(R.layout.document_plan_floor_info);
 
         init();
-        AddImageView(id_floor);
+        try {
+            AddImageView(id_floor);
+        } catch (Exception e) {
+            Toast.makeText(context, "Здесь нету изображения", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void init() {

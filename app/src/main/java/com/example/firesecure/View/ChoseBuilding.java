@@ -203,7 +203,6 @@ public class ChoseBuilding extends AppCompatActivity implements View.OnClickList
             no_data.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);
         } else { // если БД не пустой
-            Log.d("main", String.valueOf(cursor.getCount())); // смотрю курсор
             while (cursor.moveToNext()) { // заполняю массивы всеми данными из курсора, который берется из БД
                 id_building.add(cursor.getString(0));
                 name_building.add(cursor.getString(1));

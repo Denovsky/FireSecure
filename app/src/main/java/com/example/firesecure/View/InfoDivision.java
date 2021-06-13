@@ -83,22 +83,26 @@ public class InfoDivision extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("id", divis_id);
                 startActivity(intent);
                 break;
-//            case R.id.hydrants_but:
-//                intent = new Intent(this, );
-//                startActivity(intent);
-//                break;
-//            case R.id.waterpool_but:
-//                intent = new Intent(this, );
-//                startActivity(intent);
-//                break;
-//            case R.id.employees_but:
-//                intent = new Intent(this, );
-//                startActivity(intent);
-//                break;
-//            case R.id.tech_but:
-//                intent = new Intent(this, );
-//                startActivity(intent);
-//                break;
+            case R.id.hydrants_but:
+                intent = new Intent(this, ChoseHydrant.class);
+                intent.putExtra("id", divis_id);
+                startActivity(intent);
+                break;
+            case R.id.waterpool_but:
+                intent = new Intent(this, ChosePool.class);
+                intent.putExtra("id", divis_id);
+                startActivity(intent);
+                break;
+            case R.id.employees_but:
+                intent = new Intent(this, ChoseEmployee.class);
+                intent.putExtra("id", divis_id);
+                startActivity(intent);
+                break;
+            case R.id.tech_but:
+                intent = new Intent(this, ChoseTech.class);
+                intent.putExtra("id", divis_id);
+                startActivity(intent);
+                break;
 //            case R.id.info_departure_btn:
 //                intent = new Intent(this, );
 //                startActivity(intent);

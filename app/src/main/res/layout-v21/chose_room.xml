@@ -178,6 +178,7 @@
         android:layout_margin="50dp"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/submit"
+        android:visibility="visible"
         app:srcCompat="@drawable/ic_add_fab"
         app:fabCustomSize="100dp"
         app:maxImageSize="50dp"

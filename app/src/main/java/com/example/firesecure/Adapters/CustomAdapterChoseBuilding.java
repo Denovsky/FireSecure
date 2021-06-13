@@ -60,11 +60,11 @@ public class CustomAdapterChoseBuilding extends RecyclerView.Adapter<CustomAdapt
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, InfoBuilding.class);
-                intent.putExtra("id", String.valueOf(id_building.get(position)));
+                intent.putExtra("id_build", String.valueOf(id_building.get(position)));
                 intent.putExtra("name", String.valueOf(name_building.get(position)));
                 intent.putExtra("depo", String.valueOf(depo_building.get(position)));
                 intent.putExtra("address", String.valueOf(address_building.get(position)));
-                intent.putExtra("division", String.valueOf(id_divis_array.get(position)));
+                intent.putExtra("id_divis", String.valueOf(id_divis_array.get(position)));
                 activity.startActivity(intent);
             }
         });

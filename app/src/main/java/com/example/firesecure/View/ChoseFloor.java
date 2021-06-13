@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class ChoseFloor extends AppCompatActivity implements View.OnClickListener {
 
-    private String id_build;
+    private String id_build, id_divis;
     private boolean flag = false;
 
     private EditText enter_search;
@@ -82,7 +82,7 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
 
         Bundle extras = getIntent().getExtras();
         id_build = extras.getString("id");
-
+        id_divis = extras.getString("id_divis");
     }
 
     @Override
@@ -108,13 +108,14 @@ public class ChoseFloor extends AppCompatActivity implements View.OnClickListene
 
         CustomAdapterChoseFloor CustomAdapterChoseFloor =
                 new CustomAdapterChoseFloor(ChoseFloor.this, this,
-                id_floor_final,
-                num_floor_final,
-                status_floor_final,
-                entry_num_final,
-                length_lever_final,
-                area_size_floor_final,
-                id_building_final);
+                        id_floor_final,
+                        num_floor_final,
+                        status_floor_final,
+                        entry_num_final,
+                        length_lever_final,
+                        area_size_floor_final,
+                        id_building_final,
+                        id_divis);
         recyclerView.setAdapter(CustomAdapterChoseFloor);
         recyclerView.setLayoutManager(new LinearLayoutManager(ChoseFloor.this));
     }
