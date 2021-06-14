@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.example.firesecure.View.ChoseCalc;
 import com.example.firesecure.View.ChoseDivision;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -38,21 +39,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (sharedPreferences.getAll().size() == 0){
             editor.putBoolean("Flag", true);
         }
-        else {
-            
-        }
     }
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         switch (v.getId()){
             case R.id.entry_but:
-                Intent intent = new Intent(context, ChoseDivision.class);
+                intent = new Intent(context, ChoseDivision.class);
                 startActivity(intent);
                 break;
             case R.id.data_but:
                 break;
             case R.id.calc_but:
+                intent = new Intent(context, ChoseCalc.class);
+                startActivity(intent);
                 break;
             case R.id.setting_but:
                 break;

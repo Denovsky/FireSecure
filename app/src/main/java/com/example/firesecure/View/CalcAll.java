@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class CalcAll extends AppCompatActivity {
     // главное инфо
-    private Double area_size, intensity, linear_speed;
+    private Double area_size, intensity;
     private TextView
             need_spend_dumping,
             need_spend_secure,
@@ -52,7 +52,6 @@ public class CalcAll extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         area_size = Double.valueOf(extras.getString("area_size"));
         intensity = Double.valueOf(extras.getString("intensity"));
-        linear_speed = Double.valueOf(extras.getString("linear_speed"));
 
         need_spend_dumping = (TextView) findViewById(R.id.need_spend_dumping);
         need_spend_secure = (TextView) findViewById(R.id.need_spend_secure);

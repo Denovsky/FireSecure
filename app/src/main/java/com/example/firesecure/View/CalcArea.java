@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class CalcArea extends AppCompatActivity {
 
-    private String id_build;
+    private String id_build, name_build;
     private Double main_area_size;
 
     public void setMain_area_size(Double main_area_size) {
@@ -35,7 +35,7 @@ public class CalcArea extends AppCompatActivity {
     }
 
     private ImageView empty_imageview;
-    public TextView no_data, area_size, header;
+    public TextView no_data, header, area_size;
     private RecyclerView recyclerView;
     private ChoseRoomDatabase myDB;
     private FloatingActionButton close_all;
@@ -82,7 +82,6 @@ public class CalcArea extends AppCompatActivity {
                 Intent intent = new Intent();
                 setMain_area_size(Double.valueOf(area_size.getText().toString().trim()));
                 intent.putExtra("main_area_size", String.valueOf(main_area_size));
-                Log.d("TAGER", String.valueOf(main_area_size));
                 setResult(RESULT_OK, intent);
                 finish();
             }
@@ -92,6 +91,9 @@ public class CalcArea extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         id_build = extras.getString("id_build");
+        name_build = extras.getString("name_build");
+
+        header.setText(name_build);
     }
 
     @Override

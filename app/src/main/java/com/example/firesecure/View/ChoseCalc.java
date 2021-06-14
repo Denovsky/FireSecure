@@ -30,12 +30,12 @@ public class ChoseCalc extends AppCompatActivity implements View.OnClickListener
 
     private ChoseBuildingDatabase myDB;
     private ChoseDataDatabase DataDB;
-    private String id_build, id_divis;
+    private String id_build, id_divis, name_build;
 
     private Spinner build_spinner;
     private Button calc_area, calc_all;
-    private TextView area_size, linear_speed;
-    private EditText intensity;
+    private TextView linear_speed;
+    private EditText intensity, area_size;
 
     private ArrayList<String> id_building_array = new ArrayList<>();
     private ArrayList<String> name_building_array = new ArrayList<>();
@@ -66,17 +66,24 @@ public class ChoseCalc extends AppCompatActivity implements View.OnClickListener
 
     private void init() {
         Bundle extras = getIntent().getExtras();
-        id_build = extras.getString("id_build");
-        id_divis = extras.getString("id_divis");
+        try {
+            id_build = extras.getString("id_build");
+            id_divis = extras.getString("id_divis");
+        } catch (Exception e) {
+            id_divis = null;
+        }
+
 
         myDB = new ChoseBuildingDatabase(this);
         DataDB = new ChoseDataDatabase(this);
 
         build_spinner = (Spinner) findViewById(R.id.build_spinner);
-        calc_area = (Button) findViewById(R.id.calc_area);
-        calc_area.setOnClickListener(this);
 
-        area_size = (TextView) findViewById(R.id.area_size);
+        calc_area = (Button) findViewById(R.id.calc_area);
+        if (id_divis != null) {
+            calc_area.setOnClickListener(this);
+        }
+        area_size = (EditText) findViewById(R.id.area_size);
 
         intensity = (EditText) findViewById(R.id.intensity);
 
@@ -94,7 +101,9 @@ public class ChoseCalc extends AppCompatActivity implements View.OnClickListener
                 name_building_array.add(cursor.getString(1));
                 id_division_array.add(cursor.getString(4));
             }
-            checkDivision();
+            if (id_divis != null){
+                checkDivision();
+            }
         } else {
             name_building_array_final.add("Нет информации");
         }
@@ -117,7 +126,8 @@ public class ChoseCalc extends AppCompatActivity implements View.OnClickListener
         build_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                id_build = id_building_array.get(position);
+                id_build = id_building_array_final.get(position);
+                name_build = name_building_array_final.get(position);
                 if (id_build_info_array.contains(id_build)) {
                     int index = id_build_info_array.indexOf(id_build);
                     intensity.setText(intensity_water_info_array.get(index));
@@ -153,13 +163,13 @@ public class ChoseCalc extends AppCompatActivity implements View.OnClickListener
             case R.id.calc_area:
                 intent = new Intent(this, CalcArea.class);
                 intent.putExtra("id_build", id_build);
+                intent.putExtra("name_build", name_build);
                 startActivityForResult(intent, 1);
                 break;
             case R.id.calc_all:
                 intent = new Intent(this, CalcAll.class);
                 intent.putExtra("area_size", area_size.getText().toString().trim());
                 intent.putExtra("intensity", intensity.getText().toString().trim());
-                intent.putExtra("linear_speed", linear_speed.getText().toString().trim());
                 startActivity(intent);
                 break;
         }
