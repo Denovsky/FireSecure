@@ -1,5 +1,6 @@
 package com.example.firesecure.View;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
@@ -10,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +42,8 @@ public class CalcArea extends AppCompatActivity {
     private ChoseRoomDatabase myDB;
     private FloatingActionButton close_all;
 
+    private Context context;
+
     private ArrayList<String> num_room = new ArrayList<>();
     private ArrayList<String> name_room = new ArrayList<>();
     private ArrayList<String> area_size_room = new ArrayList<>();
@@ -64,9 +68,26 @@ public class CalcArea extends AppCompatActivity {
         setContentView(R.layout.calc_area);
 
         init();
+        close_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                Toast.makeText(context, "Нажатие", Toast.LENGTH_LONG).show();
+                if (!area_size.getText().toString().trim().equals("")){
+                    setMain_area_size(Double.valueOf(area_size.getText().toString().trim()));
+                    intent.putExtra("main_area_size", String.valueOf(main_area_size));
+                    setResult(RESULT_OK, intent);
+                    finish();
+                } else {
+                    Toast.makeText(context, "Выберите помещения", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     private void init() {
+        context = this;
+
         myDB = new ChoseRoomDatabase(CalcArea.this);
 
         header = (TextView) findViewById(R.id.header);
@@ -76,16 +97,6 @@ public class CalcArea extends AppCompatActivity {
         no_data = (TextView) findViewById(R.id.no_data);
 
         close_all = (FloatingActionButton) findViewById(R.id.close_all);
-        close_all.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                setMain_area_size(Double.valueOf(area_size.getText().toString().trim()));
-                intent.putExtra("main_area_size", String.valueOf(main_area_size));
-                setResult(RESULT_OK, intent);
-                finish();
-            }
-        });
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
