@@ -19,11 +19,11 @@ public class ChoseDataDatabase extends SQLiteOpenHelper {
 
     public static final String TABLE_NAME = "intensity_linear_speed";
 
-        public static final String COLUMN_ID = "id_facility";
-        public static final String OBJECT_AND_MATERIALS = "objects_and_materials";
-        public static final String INTENSITY_WATER = "intensity_water";
-        public static final String LINEAR_SPEED_OF_FIRE = "linear_speed_of_fire";
-        public static final String ID_BUILD = "id_build";
+    public static final String COLUMN_ID = "id_facility";
+    public static final String OBJECT_AND_MATERIALS = "objects_and_materials";
+    public static final String INTENSITY_WATER = "intensity_water";
+    public static final String LINEAR_SPEED_OF_FIRE = "linear_speed_of_fire";
+    public static final String ID_BUILD = "id_build";
 
     public ChoseDataDatabase(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -92,7 +92,7 @@ public class ChoseDataDatabase extends SQLiteOpenHelper {
 
     public Cursor getData(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(TABLE_NAME, null,  COLUMN_ID + " = ?", new String[]{id}, null, null, null);
+        Cursor cursor = db.query(TABLE_NAME, null, COLUMN_ID + " = ?", new String[]{id}, null, null, null);
         return cursor;
     }
 }

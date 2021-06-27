@@ -33,7 +33,7 @@ public class ChoseTechDatabase extends SQLiteOpenHelper {
         public static final String NUM_NODE_UNIVERSAL = "num_node_universal";
         public static final String NUM_NODE_PORTABLE = "num_node_portable";
         public static final String NUM_NODE_STATIC = "num_node_static";
-        public static final String ID_DIVISION = "id_division";
+            public static final String ID_DIVISION = "id_division";
 
     public ChoseTechDatabase(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

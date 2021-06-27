@@ -7,17 +7,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.example.firesecure.View.ChoseCalc;
-import com.example.firesecure.View.ChoseDivision;
+import com.example.firesecure.View_and_Presenter.AddToDB.DBInfo;
+import com.example.firesecure.View_and_Presenter.ChoseCalc;
+import com.example.firesecure.View_and_Presenter.ChoseDivision;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button entry_but, data_but, calc_but, setting_but;
+    private Button entry_but, BD_info_but, calc_but, setting_but;
     private Context context;
 
     private SharedPreferences sharedPreferences = null;
@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(context, ChoseDivision.class);
                 startActivity(intent);
                 break;
-            case R.id.data_but:
+            case R.id.BD_info_but:
+                intent = new Intent(context, DBInfo.class);
+                startActivity(intent);
                 break;
             case R.id.calc_but:
                 intent = new Intent(context, ChoseCalc.class);
@@ -64,12 +66,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         context = this.getApplicationContext();
 
         entry_but = (Button) findViewById(R.id.entry_but);
-        data_but = (Button) findViewById(R.id.data_but);
+        BD_info_but = (Button) findViewById(R.id.BD_info_but);
         calc_but = (Button) findViewById(R.id.calc_but);
         setting_but = (Button) findViewById(R.id.setting_but);
 
         entry_but.setOnClickListener(this);
-        data_but.setOnClickListener(this);
+        BD_info_but.setOnClickListener(this);
         calc_but.setOnClickListener(this);
         setting_but.setOnClickListener(this);
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".View.DocumentWayBuilding">
+    tools:context=".View_and_Presenter.DocumentWayBuilding">
 
     <LinearLayout
         android:id="@+id/linearLayout"

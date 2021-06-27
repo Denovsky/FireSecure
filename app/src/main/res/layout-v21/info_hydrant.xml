@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_line"
     android:orientation="vertical"
-    tools:context=".View.InfoHydrant">
+    tools:context=".View_and_Presenter.InfoHydrant">
 
     <LinearLayout
         android:layout_width="match_parent"

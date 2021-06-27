@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name = "android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -20,133 +22,136 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.ChoseDivision">
+        <activity android:name=".View_and_Presenter.ChoseDivision">
 
         </activity>
-        <activity android:name=".View.AddDivision">
+        <activity android:name=".View_and_Presenter.AddDivision">
 
         </activity>
-        <activity android:name=".View.InfoDivision">
+        <activity android:name=".View_and_Presenter.InfoDivision">
 
         </activity>
-        <activity android:name=".View.ChoseBuilding">
+        <activity android:name=".View_and_Presenter.ChoseBuilding">
 
         </activity>
-        <activity android:name=".View.AddBuilding">
+        <activity android:name=".View_and_Presenter.AddBuilding">
 
         </activity>
-        <activity android:name=".View.InfoBuilding">
+        <activity android:name=".View_and_Presenter.InfoBuilding">
 
         </activity>
-        <activity android:name=".View.PacificInfoBuilding">
+        <activity android:name=".View_and_Presenter.PacificInfoBuilding">
 
         </activity>
-        <activity android:name=".View.OTXInfoBuilding">
+        <activity android:name=".View_and_Presenter.OTXInfoBuilding">
 
         </activity>
-        <activity android:name=".View.DocumentSchemaBuilding">
+        <activity android:name=".View_and_Presenter.DocumentSchemaBuilding">
 
         </activity>
-        <activity android:name=".View.DocumentWayBuilding">
+        <activity android:name=".View_and_Presenter.DocumentWayBuilding">
 
         </activity>
-        <activity android:name=".View.DocumentPlanFloor">
+        <activity android:name=".View_and_Presenter.DocumentPlanFloor">
 
         </activity>
-        <activity android:name=".View.ChoseFloor">
+        <activity android:name=".View_and_Presenter.ChoseFloor">
 
         </activity>
-        <activity android:name=".View.AddFloor">
+        <activity android:name=".View_and_Presenter.AddFloor">
 
         </activity>
-        <activity android:name=".View.InfoFloor">
+        <activity android:name=".View_and_Presenter.InfoFloor">
 
         </activity>
-        <activity android:name=".View.DocumentPlanFloorInfo">
+        <activity android:name=".View_and_Presenter.DocumentPlanFloorInfo">
 
         </activity>
-        <activity android:name=".View.ChoseRoom">
+        <activity android:name=".View_and_Presenter.ChoseRoom">
 
         </activity>
-        <activity android:name=".View.AddRoom">
+        <activity android:name=".View_and_Presenter.AddRoom">
 
         </activity>
-        <activity android:name=".View.DocumentPlanRoom">
+        <activity android:name=".View_and_Presenter.DocumentPlanRoom">
 
         </activity>
-        <activity android:name=".View.DocumentPlanRoomInfo">
+        <activity android:name=".View_and_Presenter.DocumentPlanRoomInfo">
 
         </activity>
-        <activity android:name=".View.InfoRoom">
+        <activity android:name=".View_and_Presenter.InfoRoom">
 
         </activity>
-        <activity android:name=".View.ChoseHydrant">
+        <activity android:name=".View_and_Presenter.ChoseHydrant">
 
         </activity>
-        <activity android:name=".View.AddHydrant">
+        <activity android:name=".View_and_Presenter.AddHydrant">
 
         </activity>
-        <activity android:name=".View.InfoHydrant">
+        <activity android:name=".View_and_Presenter.InfoHydrant">
 
         </activity>
-        <activity android:name=".View.ChosePool">
+        <activity android:name=".View_and_Presenter.ChosePool">
 
         </activity>
-        <activity android:name=".View.AddPool">
+        <activity android:name=".View_and_Presenter.AddPool">
 
         </activity>
-        <activity android:name=".View.InfoPool">
+        <activity android:name=".View_and_Presenter.InfoPool">
 
         </activity>
-        <activity android:name=".View.ChoseEmployee">
+        <activity android:name=".View_and_Presenter.ChoseEmployee">
 
         </activity>
-        <activity android:name=".View.AddEmployee">
+        <activity android:name=".View_and_Presenter.AddEmployee">
 
         </activity>
-        <activity android:name=".View.InfoEmployee">
+        <activity android:name=".View_and_Presenter.InfoEmployee">
 
         </activity>
-        <activity android:name=".View.ChoseTech">
+        <activity android:name=".View_and_Presenter.ChoseTech">
 
         </activity>
-        <activity android:name=".View.AddTech">
+        <activity android:name=".View_and_Presenter.AddTech">
 
         </activity>
-        <activity android:name=".View.InfoTech">
+        <activity android:name=".View_and_Presenter.InfoTech">
 
         </activity>
-        <activity android:name=".View.ReferenceData">
+        <activity android:name=".View_and_Presenter.ReferenceData">
 
         </activity>
-        <activity android:name=".View.ChoseData">
+        <activity android:name=".View_and_Presenter.ChoseData">
 
         </activity>
-        <activity android:name=".View.AddData">
+        <activity android:name=".View_and_Presenter.AddData">
 
         </activity>
-        <activity android:name=".View.InfoData">
+        <activity android:name=".View_and_Presenter.InfoData">
 
         </activity>
-        <activity android:name=".View.AddCO">
+        <activity android:name=".View_and_Presenter.AddCO">
 
         </activity>
-        <activity android:name=".View.ChoseFireres">
+        <activity android:name=".View_and_Presenter.ChoseFireres">
 
         </activity>
-        <activity android:name=".View.InfoPushHydrant">
+        <activity android:name=".View_and_Presenter.InfoPushHydrant">
 
         </activity>
-        <activity android:name=".View.AddPushHydrant">
+        <activity android:name=".View_and_Presenter.AddPushHydrant">
 
         </activity>
-        <activity android:name=".View.ChoseCalc">
+        <activity android:name=".View_and_Presenter.ChoseCalc">
 
         </activity>
-        <activity android:name=".View.CalcArea">
+        <activity android:name=".View_and_Presenter.CalcArea">
 
         </activity>
-        <activity android:name=".View.CalcAll">
+        <activity android:name=".View_and_Presenter.CalcAll">
+
+        </activity>
+        <activity android:name=".View_and_Presenter.AddToDB.DBInfo">
 
         </activity>
     </application>

@@ -16,6 +16,7 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -65,17 +66,17 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/data_but"
+                android:id="@+id/BD_info_but"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="50dp"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="25sp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="25sp"
                 android:background="@drawable/bg_button"
-                android:text="@string/data_str"
+                android:text="Удалённый доступ к Б.Д."
                 android:textColor="@color/black"
                 android:textSize="35sp"
                 app:backgroundTint="@color/black"

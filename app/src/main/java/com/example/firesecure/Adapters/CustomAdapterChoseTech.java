@@ -17,8 +17,7 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firesecure.R;
-import com.example.firesecure.View.InfoEmployee;
-import com.example.firesecure.View.InfoTech;
+import com.example.firesecure.View_and_Presenter.InfoTech;
 
 import java.util.ArrayList;
 

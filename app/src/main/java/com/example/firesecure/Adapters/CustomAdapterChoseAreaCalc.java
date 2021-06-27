@@ -2,7 +2,6 @@ package com.example.firesecure.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +19,7 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firesecure.R;
-import com.example.firesecure.View.CalcArea;
-import com.example.firesecure.View.InfoRoom;
+import com.example.firesecure.View_and_Presenter.CalcArea;
 
 import java.util.ArrayList;
 

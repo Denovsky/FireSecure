@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_line"
     android:orientation="vertical"
-    tools:context=".View.InfoFloor">
+    tools:context=".View_and_Presenter.InfoFloor">
 
     <LinearLayout
         android:layout_width="match_parent"
