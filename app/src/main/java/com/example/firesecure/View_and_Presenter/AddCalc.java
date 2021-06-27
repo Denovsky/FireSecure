@@ -122,8 +122,6 @@ class MyTimerTask extends TimerTask {
 
     @Override
     public void run() {
-        Log.d("TAGER", "уебу -" + num_posts_safety.getText().toString() + "- чтото");
-        Log.d("TAGER", "уебу -" + num_magistry_line.getText().toString() + "- чтото2");
         if (!num_posts_safety.getText().toString().equals("") && !num_magistry_line.getText().toString().equals("") && num_personal.getText().toString().equals("")) {
             activity.runOnUiThread(new Runnable() {
                 @Override
