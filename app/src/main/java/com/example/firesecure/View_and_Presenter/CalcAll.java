@@ -1,8 +1,13 @@
 package com.example.firesecure.View_and_Presenter;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -22,6 +27,11 @@ public class CalcAll extends AppCompatActivity {
             spend_dumping,
             spend_secure,
             spend_main;
+    private Button additional_calc;
+
+    private Activity activity;
+    private Context context;
+    private Intent intent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +51,9 @@ public class CalcAll extends AppCompatActivity {
         area_size = Double.valueOf(extras.getString("area_size"));
         intensity = Double.valueOf(extras.getString("intensity"));
 
+        activity = CalcAll.this;
+        context = this;
+
         need_spend_dumping = (TextView) findViewById(R.id.need_spend_dumping);
         need_spend_secure = (TextView) findViewById(R.id.need_spend_secure);
         need_spend_main = (TextView) findViewById(R.id.need_spend_main);
@@ -49,6 +62,18 @@ public class CalcAll extends AppCompatActivity {
         spend_dumping = (TextView) findViewById(R.id.spend_dumping);
         spend_secure = (TextView) findViewById(R.id.spend_secure);
         spend_main = (TextView) findViewById(R.id.spend_main);
+
+        additional_calc = (Button) findViewById(R.id.additional_calc);
+        additional_calc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, AddCalc.class);
+                intent.putExtra("spend_main_text", spend_main.getText());
+                intent.putExtra("num_sleeve_dump_d", num_sleeve_dump.getText().toString().trim());
+                intent.putExtra("num_sleeve_secure_d", num_sleeve_secure.getText().toString().trim());
+                startActivity(intent);
+            }
+        });
     }
 
     private void fillInfo() {

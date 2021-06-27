@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".View_and_Presenter.CalcAll">
+    tools:context=".View_and_Presenter.AddCalc">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Расчёт средств и сил"
+                android:text="Расчёт количества личного состава"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="50dp"
@@ -81,17 +81,18 @@
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
-                                        android:text="Требуемый расход на тушение:"
+                                        android:text="Количество пожарных автомобилей:"
                                         android:textColor="@color/black"
-                                        android:textSize="40sp" />
+                                        android:textSize="35sp" />
 
                                     <TextView
-                                        android:id="@+id/need_spend_dumping"
+                                        android:id="@+id/num_fire_tech"
                                         android:layout_width="match_parent"
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:textColor="@color/black"
+                                        android:background="@drawable/bg_lower_line"
                                         android:textSize="40sp" />
 
                                 </LinearLayout>
@@ -127,17 +128,114 @@
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
-                                        android:text="Требуемый расход на защиту:"
+                                        android:text="Количество постов безопасности:"
                                         android:textColor="@color/black"
-                                        android:textSize="40sp" />
+                                        android:textSize="35sp" />
 
-                                    <TextView
-                                        android:id="@+id/need_spend_secure"
+                                    <EditText
+                                        android:id="@+id/num_posts_safety"
                                         android:layout_width="match_parent"
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:textColor="@color/black"
+                                        android:hint="Кол-во:"
+                                        android:background="@drawable/bg_line"
+                                        android:textSize="35sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_lower_line"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="50dp"
+                                    android:layout_marginLeft="50dp"
+                                    android:layout_marginEnd="50dp"
+                                    android:layout_marginRight="50dp"
+                                    android:background="@drawable/bg_lower_line"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="Количество магистральных линий:"
+                                        android:textColor="@color/black"
+                                        android:textSize="35sp" />
+
+                                    <EditText
+                                        android:id="@+id/num_magistry_line"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:textColor="@color/black"
+                                        android:hint="Кол-во:"
+                                        android:background="@drawable/bg_line"
+                                        android:textSize="35sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_lower_line"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="50dp"
+                                    android:layout_marginLeft="50dp"
+                                    android:layout_marginEnd="50dp"
+                                    android:layout_marginRight="50dp"
+                                    android:background="@drawable/bg_lower_line"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="Численность личного состава:"
+                                        android:textColor="@color/black"
+                                        android:textSize="40sp" />
+
+                                    <TextView
+                                        android:id="@+id/num_personal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:textColor="@color/black"
+                                        android:background="@drawable/bg_lower_line"
                                         android:textSize="40sp" />
 
                                 </LinearLayout>
@@ -173,18 +271,20 @@
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
-                                        android:text="Общий требуемый расход:"
+                                        android:text="Введите высоту магистральной линии:"
                                         android:textColor="@color/black"
-                                        android:textSize="40sp" />
+                                        android:textSize="33sp" />
 
-                                    <TextView
-                                        android:id="@+id/need_spend_main"
+                                    <EditText
+                                        android:id="@+id/entry_height_magistral_line"
                                         android:layout_width="match_parent"
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:textColor="@color/black"
-                                        android:textSize="40sp" />
+                                        android:hint="Высота:"
+                                        android:background="@drawable/bg_line"
+                                        android:textSize="33sp" />
 
                                 </LinearLayout>
 
@@ -219,110 +319,20 @@
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
-                                        android:text="Количество стволов на тушение:"
+                                        android:text="Введите высоту пожарных стволов:"
                                         android:textColor="@color/black"
-                                        android:textSize="40sp" />
+                                        android:textSize="35sp" />
 
-                                    <TextView
-                                        android:id="@+id/num_sleeve_dump"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="0dp"
-                                        android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:textColor="@color/black"
-                                        android:textSize="40sp" />
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_lower_line"
-                            android:orientation="vertical"
-                            android:padding="12dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="50dp"
-                                    android:layout_marginLeft="50dp"
-                                    android:layout_marginEnd="50dp"
-                                    android:layout_marginRight="50dp"
-                                    android:background="@drawable/bg_lower_line"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="0dp"
-                                        android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:text="Количество стволов на защиту:"
-                                        android:textColor="@color/black"
-                                        android:textSize="40sp" />
-
-                                    <TextView
-                                        android:id="@+id/num_sleeve_secure"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="0dp"
-                                        android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:textColor="@color/black"
-                                        android:textSize="40sp" />
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_lower_line"
-                            android:orientation="vertical"
-                            android:padding="12dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="50dp"
-                                    android:layout_marginLeft="50dp"
-                                    android:layout_marginEnd="50dp"
-                                    android:layout_marginRight="50dp"
-                                    android:background="@drawable/bg_lower_line"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="0dp"
-                                        android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:text="Фактический расход на тушение:"
-                                        android:textColor="@color/black"
-                                        android:textSize="40sp" />
-
-                                    <TextView
+                                    <EditText
                                         android:id="@+id/spend_dumping"
                                         android:layout_width="match_parent"
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:textColor="@color/black"
-                                        android:textSize="40sp" />
+                                        android:hint="Высота:"
+                                        android:background="@drawable/bg_line"
+                                        android:textSize="35sp" />
 
                                 </LinearLayout>
 
@@ -357,18 +367,20 @@
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
-                                        android:text="Фактический расход на защиту:"
+                                        android:text="Введите суммарный расход воды:"
                                         android:textColor="@color/black"
                                         android:textSize="35sp" />
 
-                                    <TextView
-                                        android:id="@+id/spend_secure"
+                                    <EditText
+                                        android:id="@+id/entry_sum_spend_water"
                                         android:layout_width="match_parent"
                                         android:layout_height="0dp"
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:textColor="@color/black"
-                                        android:textSize="40sp" />
+                                        android:hint="Расход:"
+                                        android:background="@drawable/bg_line"
+                                        android:textSize="35sp" />
 
                                 </LinearLayout>
 
@@ -385,12 +397,12 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:orientation="vertical">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_marginStart="50dp"
                                     android:layout_marginLeft="50dp"
                                     android:layout_marginEnd="50dp"
@@ -400,62 +412,22 @@
 
                                     <TextView
                                         android:layout_width="match_parent"
-                                        android:layout_height="0dp"
+                                        android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center"
-                                        android:text="Общий фактический расход:"
+                                        android:text="Предельное расстояние подачи огнетушащих средств:"
                                         android:textColor="@color/black"
                                         android:textSize="33sp" />
 
                                     <TextView
-                                        android:id="@+id/spend_main"
+                                        android:id="@+id/limit_distance"
                                         android:layout_width="match_parent"
-                                        android:layout_height="0dp"
+                                        android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:textColor="@color/black"
+                                        android:background="@drawable/bg_lower_line"
                                         android:textSize="40sp" />
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_lower_line"
-                            android:orientation="vertical"
-                            android:padding="12dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="50dp"
-                                    android:layout_marginLeft="50dp"
-                                    android:layout_marginEnd="50dp"
-                                    android:layout_marginRight="50dp"
-                                    android:background="@drawable/bg_lower_line"
-                                    android:orientation="vertical">
-
-                                    <Button
-                                        android:id="@+id/additional_calc"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:paddingBottom="24dp"
-                                        android:paddingTop="24dp"
-                                        android:background="@drawable/bg_button"
-                                        android:text="Расчёт количества личного состава"
-                                        android:textColor="@color/black"
-                                        android:textSize="30sp"
-                                        app:backgroundTint="@color/black"
-                                        app:backgroundTintMode="add" />
 
                                 </LinearLayout>
 
