@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -82,7 +83,7 @@ public class PacificInfoBuilding extends AppCompatActivity implements View.OnCli
     }
 
     @Override
-    public void onClick (View v){
+    public void onClick(View v) {
         confirmDialog();
     }
 
@@ -111,6 +112,27 @@ public class PacificInfoBuilding extends AppCompatActivity implements View.OnCli
         if (cursor.moveToFirst()) {
             String name = cursor.getString(cursor.getColumnIndexOrThrow(myDB.NAME_BUILDING));
             header.setText("ОБЩИЕ СВЕДЕНИЯ ОБ " + name);
+            try {
+                String test_obj = cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_1));
+                Log.d("TAGER", test_obj);
+                save_fub.setVisibility(View.GONE);
+                fillEditTexts(cursor);
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    public void fillEditTexts(Cursor cursor) {
+        if (cursor.moveToFirst()) {
+            build_info_1.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_1)));
+            build_info_2.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_2)));
+            build_info_3.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_3)));
+            build_info_4.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_4)));
+            build_info_5.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_5)));
+            build_info_6.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_6)));
+            build_info_7.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_7)));
+            build_info_8.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_8)));
+            build_info_9.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_9)));
         }
     }
 

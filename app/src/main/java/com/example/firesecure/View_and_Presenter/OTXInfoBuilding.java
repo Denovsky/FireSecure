@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -47,27 +48,6 @@ public class OTXInfoBuilding extends AppCompatActivity implements View.OnClickLi
     private EditText build_info_18;
     private EditText build_info_19;
     private EditText build_info_20;
-
-    private String build_info_1_str;
-    private String build_info_2_str;
-    private String build_info_3_str;
-    private String build_info_4_str;
-    private String build_info_5_str;
-    private String build_info_6_str;
-    private String build_info_7_str;
-    private String build_info_8_str;
-    private String build_info_9_str;
-    private String build_info_10_str;
-    private String build_info_11_str;
-    private String build_info_12_str;
-    private String build_info_13_str;
-    private String build_info_14_str;
-    private String build_info_15_str;
-    private String build_info_16_str;
-    private String build_info_17_str;
-    private String build_info_18_str;
-    private String build_info_19_str;
-    private String build_info_20_str;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,10 +97,43 @@ public class OTXInfoBuilding extends AppCompatActivity implements View.OnClickLi
         if (cursor.moveToFirst()) {
             String name = cursor.getString(cursor.getColumnIndexOrThrow(myDB.NAME_BUILDING));
             header.setText("ОТХ " + name);
+            try {
+                String test_obj = cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_10));
+                Log.d("TAGER", test_obj);
+                save_fub.setVisibility(View.GONE);
+                fillEditTexts(cursor);
+            } catch (Exception e) {
+
+            }
         }
     }
 
-    private void init(){
+    public void fillEditTexts(Cursor cursor) {
+        if (cursor.moveToFirst()) {
+            build_info_1.setText (cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_10)));
+            build_info_2.setText (cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_11)));
+            build_info_3.setText (cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_12)));
+            build_info_4.setText (cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_13)));
+            build_info_5.setText (cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_14)));
+            build_info_6.setText (cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_15)));
+            build_info_7.setText (cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_16)));
+            build_info_8.setText (cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_17)));
+            build_info_9.setText (cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_18)));
+            build_info_10.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_19)));
+            build_info_11.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_20)));
+            build_info_12.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_21)));
+            build_info_13.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_22)));
+            build_info_14.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_23)));
+            build_info_15.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_24)));
+            build_info_16.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_25)));
+            build_info_17.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_26)));
+            build_info_18.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_27)));
+            build_info_19.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_28)));
+            build_info_20.setText(cursor.getString(cursor.getColumnIndexOrThrow(myDB.PACIFIC_INFO_29)));
+        }
+    }
+
+    private void init() {
         header = (TextView) findViewById(R.id.header);
         save_fub = (FloatingActionButton) findViewById(R.id.save_fub);
         save_fub.setOnClickListener(this);
@@ -151,47 +164,26 @@ public class OTXInfoBuilding extends AppCompatActivity implements View.OnClickLi
     private ArrayList<String> getAllEditText() {
         ArrayList<String> array = new ArrayList<>();
 
-        build_info_1_str = build_info_1.getText().toString().trim();
-        build_info_2_str = build_info_2.getText().toString().trim();
-        build_info_3_str = build_info_3.getText().toString().trim();
-        build_info_4_str = build_info_4.getText().toString().trim();
-        build_info_5_str = build_info_5.getText().toString().trim();
-        build_info_6_str = build_info_6.getText().toString().trim();
-        build_info_7_str = build_info_7.getText().toString().trim();
-        build_info_8_str = build_info_8.getText().toString().trim();
-        build_info_9_str = build_info_9.getText().toString().trim();
-        build_info_10_str = build_info_10.getText().toString().trim();
-        build_info_11_str = build_info_11.getText().toString().trim();
-        build_info_12_str = build_info_12.getText().toString().trim();
-        build_info_13_str = build_info_13.getText().toString().trim();
-        build_info_14_str = build_info_14.getText().toString().trim();
-        build_info_15_str = build_info_15.getText().toString().trim();
-        build_info_16_str = build_info_16.getText().toString().trim();
-        build_info_17_str = build_info_17.getText().toString().trim();
-        build_info_18_str = build_info_18.getText().toString().trim();
-        build_info_19_str = build_info_19.getText().toString().trim();
-        build_info_20_str = build_info_20.getText().toString().trim();
-
-        array.add(build_info_1_str);
-        array.add(build_info_2_str);
-        array.add(build_info_3_str);
-        array.add(build_info_4_str);
-        array.add(build_info_5_str);
-        array.add(build_info_6_str);
-        array.add(build_info_7_str);
-        array.add(build_info_8_str);
-        array.add(build_info_9_str);
-        array.add(build_info_10_str);
-        array.add(build_info_11_str);
-        array.add(build_info_12_str);
-        array.add(build_info_13_str);
-        array.add(build_info_14_str);
-        array.add(build_info_15_str);
-        array.add(build_info_16_str);
-        array.add(build_info_17_str);
-        array.add(build_info_18_str);
-        array.add(build_info_19_str);
-        array.add(build_info_20_str);
+        array.add(build_info_1.getText().toString().trim());
+        array.add(build_info_2.getText().toString().trim());
+        array.add(build_info_3.getText().toString().trim());
+        array.add(build_info_4.getText().toString().trim());
+        array.add(build_info_5.getText().toString().trim());
+        array.add(build_info_6.getText().toString().trim());
+        array.add(build_info_7.getText().toString().trim());
+        array.add(build_info_8.getText().toString().trim());
+        array.add(build_info_9.getText().toString().trim());
+        array.add(build_info_10.getText().toString().trim());
+        array.add(build_info_11.getText().toString().trim());
+        array.add(build_info_12.getText().toString().trim());
+        array.add(build_info_13.getText().toString().trim());
+        array.add(build_info_14.getText().toString().trim());
+        array.add(build_info_15.getText().toString().trim());
+        array.add(build_info_16.getText().toString().trim());
+        array.add(build_info_17.getText().toString().trim());
+        array.add(build_info_18.getText().toString().trim());
+        array.add(build_info_19.getText().toString().trim());
+        array.add(build_info_20.getText().toString().trim());
 
         return array;
     }

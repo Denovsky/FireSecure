@@ -182,7 +182,7 @@ public class ChoseBuildingDatabase extends SQLiteOpenHelper {
                 Log.d("tag", String.valueOf(e));
             }
         } else {
-            for (int i = 10; i <= 30; i++) {
+            for (int i = 10; i < 30; i++) {
                 String column = String.format("pacific_build_info_%s", i);
                 String query = "update " + TABLE_NAME + " set " + column + " = ? where " + COLUMN_ID + " like " + id;
                 String[] bindArgs = {array.get(i - 10)};
